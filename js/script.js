@@ -235,44 +235,99 @@ if (isTouchDevice) {
    });
 
 
-     // Client logos auto-scrolling
-        const clientTrack = document.querySelector('.client-logos-track');
-        let clientPosition = 0;
-        const clientScrollSpeed = .5 // pixels per frame
-        
-        function animateClients() {
-            clientPosition -= clientScrollSpeed;
-            
-            // Reset position when scrolled all items
-            if (clientPosition < -clientTrack.scrollWidth / 2) {
-                clientPosition = 0;
+// Client logos auto-scrolling
+       class AutoScroller {
+            constructor(trackSelector, speed = 0.5) {
+                this.track = document.querySelector(trackSelector);
+                this.speed = speed;
+                this.position = 0;
+                this.isRunning = false;
+                this.animationId = null;
+                this.isPaused = false;
+                
+                if (this.track) {
+                    this.init();
+                }
             }
             
-            clientTrack.style.transform = `translateX(${clientPosition}px)`;
-            requestAnimationFrame(animateClients);
-        }
-        
-        animateClients();
-        
-        // Industries auto-scrolling
-        const industryTrack = document.querySelector('.industry-slider-track');
-        let industryPosition = 0;
-        const industryScrollSpeed = 0.8; // pixels per frame
-        
-        function animateIndustries() {
-            industryPosition -= industryScrollSpeed;
-            
-            // Reset position when scrolled all items
-            if (industryPosition < -industryTrack.scrollWidth / 2) {
-                industryPosition = 0;
+            init() {
+                // Start animation
+                this.start();
+                
+                // Add hover pause functionality
+                const container = this.track.closest('.client-logos-container') || this.track.closest('.industry-slider-container');
+                if (container) {
+                    container.addEventListener('mouseenter', () => this.pause());
+                    container.addEventListener('mouseleave', () => this.resume());
+                }
             }
             
-            industryTrack.style.transform = `translateX(${industryPosition}px)`;
-            requestAnimationFrame(animateIndustries);
+            animate() {
+                if (!this.isPaused) {
+                    this.position -= this.speed;
+                    
+                    // Reset position when scrolled half the content (for seamless loop)
+                    if (this.position <= -this.track.scrollWidth / 2) {
+                        this.position = 0;
+                    }
+                    
+                    this.track.style.transform = `translateX(${this.position}px)`;
+                }
+                
+                if (this.isRunning) {
+                    this.animationId = requestAnimationFrame(() => this.animate());
+                }
+            }
+            
+            start() {
+                if (!this.isRunning) {
+                    this.isRunning = true;
+                    this.animate();
+                }
+            }
+            
+            stop() {
+                this.isRunning = false;
+                if (this.animationId) {
+                    cancelAnimationFrame(this.animationId);
+                }
+            }
+            
+            pause() {
+                this.isPaused = true;
+            }
+            
+            resume() {
+                this.isPaused = false;
+            }
+            
+            setSpeed(newSpeed) {
+                this.speed = newSpeed;
+            }
         }
         
-        animateIndustries();
+        // Initialize scrollers when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Client logos scroller
+            const clientScroller = new AutoScroller('.client-logos-track', 0.5);
+            
+            // Industries scroller (if exists)
+            const industryScroller = new AutoScroller('.industry-slider-track', 0.8);
+            
+            // Handle visibility change to pause/resume animation when tab is not active
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    clientScroller.pause();
+                    if (industryScroller) industryScroller.pause();
+                } else {
+                    clientScroller.resume();
+                    if (industryScroller) industryScroller.resume();
+                }
+            });
+        });
         
+
+
     // Testimonial Slider Functionality
 const initTestimonialSlider = () => {
     const track = document.querySelector('.testimonial-slider-track');
