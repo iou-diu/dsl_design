@@ -1,0 +1,2322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from daffodilsoft.netlify.app/products/iums by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jun 2025 20:06:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IUMS - Integrated University Management System</title>
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #ff6600;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --text-color: #444;
+            --text-light: #777;
+            --white: #fff;
+            --black: #000;
+            --gray: #e9ecef;
+            --dark-gray: #6c757d;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn-large {
+            padding: 15px 35px;
+            font-size: 16px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            position: relative;
+            text-align: center;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hotline i {
+            margin-right: 8px;
+            color: var(--secondary-color);
+        }
+
+        .social-icons a {
+            color: var(--white);
+            margin-left: 15px;
+            font-size: 16px;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Main Navigation */
+        .main-nav {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            position: relative;
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a i {
+            margin-left: 5px;
+            font-size: 12px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            width: 220px;
+            box-shadow: var(--shadow);
+            border-radius: 5px;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(10px);
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .dropdown-menu a {
+            padding: 10px 20px;
+            display: block;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--gray);
+            color: var(--primary-color);
+            padding-left: 25px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Product Hero Section */
+        .product-hero {
+            background: linear-gradient(135deg, #0066cc 0%, #004080 100%);
+            color: #fff;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .product-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-hero .breadcrumb {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .product-hero .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .product-hero .breadcrumb a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .product-hero .breadcrumb span {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .product-hero .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .product-hero .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .product-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .product-hero h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .product-hero .hero-btns {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .product-hero .hero-image {
+            flex: 1;
+            max-width: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .product-hero .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+            transform: translateZ(20px);
+        }
+
+        .product-hero .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0,102,204,0.3) 0%, rgba(255,102,0,0.2) 100%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-hero .hero-image:hover::before {
+            opacity: 1;
+        }
+
+        .product-hero .hero-image:hover img {
+            transform: scale(1.05) translateZ(20px);
+        }
+
+        .btn-demo {
+            background: #ff6600;
+            border-color: #ff6600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-demo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-demo:hover::after {
+            left: 100%;
+        }
+
+        .btn-brochure {
+            background: transparent;
+            border-color: #fff;
+            color: #fff;
+            position: relative;
+        }
+
+        .btn-brochure:hover {
+            background: #fff;
+            color: #0066cc;
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+
+        /* Product Introduction Section */
+        .product-intro {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .product-intro .intro-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .product-intro .intro-text {
+            flex: 1;
+        }
+
+        .product-intro .intro-text h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .product-intro .intro-text p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .product-intro .intro-video {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .product-intro .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .product-intro .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Core Modules Section */
+        /* Core Modules Section */
+    .core-modules {
+        padding: 80px 0;
+        background: #f8f9fa;
+    }
+
+    .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .module-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border: 1px solid #e9ecef;
+    }
+
+    .module-header {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        background: transparent;
+        color: #333;
+    }
+
+    .module-header h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .module-header i {
+        transition: transform 0.3s ease;
+        color: #777;
+    }
+
+    .module-card.active .module-header i {
+        transform: rotate(180deg);
+    }
+
+    .module-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .module-card.active .module-content {
+        max-height: 500px;
+    }
+
+    .module-content ul {
+        padding: 0 20px 20px;
+        margin: 0;
+    }
+
+    .module-content li {
+        padding: 8px 0;
+        font-size: 14px;
+        color: #555;
+        border-bottom: 1px solid #f0f0f0;
+        position: relative;
+    }
+
+    .module-content li:last-child {
+        border-bottom: none;
+    }
+
+    .module-content li:hover::before {
+        content: "→";
+        position: absolute;
+        left: -15px;
+        color: #0066cc;
+    }
+
+    /* Hover effects for desktop */
+    @media (min-width: 769px) {
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .module-card:hover .module-header {
+            color: #0066cc;
+        }
+    }
+
+        /* Key Advantages Section */
+        .key-advantages {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .advantage-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .advantage-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: rgba(0, 102, 204, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #0066cc;
+            transition: all 0.3s ease;
+        }
+
+        .advantage-card:hover .advantage-icon {
+            background: #0066cc;
+            color: #fff;
+            transform: rotateY(180deg);
+        }
+
+        .advantage-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .advantage-card p {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Clients Section */
+        .clients-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .client-logos-container {
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .client-logos-track {
+            display: flex;
+            gap: 40px;
+            width: max-content;
+            will-change: transform;
+        }
+
+        .client-logo-item {
+            position: relative;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .client-logo-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .client-logo {
+            height: 60px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .client-logo-item:hover .client-logo {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        .client-tooltip {
+            position: absolute;
+            bottom: calc(100% + 15px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 15px;
+            border-radius: 8px;
+            width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .client-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color: var(--dark-color) transparent transparent transparent;
+        }
+
+        .client-logo-item:hover .client-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-10px);
+        }
+
+        .client-tooltip h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .client-tooltip p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* Contact CTA Section */
+        .contact-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0066cc 0%, #004080 100%);
+            color: #fff;
+        }
+
+        .contact-cta .cta-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .contact-cta .cta-text {
+            flex: 1;
+        }
+
+        .contact-cta .cta-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .contact-cta .cta-text p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .cta-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #ff6600;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .contact-cta .cta-form {
+            flex: 1;
+            max-width: 500px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-cta .cta-form h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #0066cc;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+       
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 80px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact-item i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-newsletter h4 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-newsletter form {
+            display: flex;
+        }
+
+        .footer-newsletter input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 14px;
+        }
+
+        .footer-newsletter button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .footer-newsletter button:hover {
+            background: var(--secondary-color);
+        }
+
+        .footer-certificates {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-certificates img {
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .footer-certificates img:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .footer-bottom a {
+            color: var(--gray);
+            margin: 0 10px;
+            font-size: 18px;
+            transition: var(--transition);
+        }
+
+        .footer-bottom a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #777;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        .modal h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .modal p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .brochure-viewer {
+            height: 500px;
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+        }
+
+        .brochure-viewer iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .brochure-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .share-btn {
+            background: #3b5998;
+            border-color: #3b5998;
+        }
+
+        .share-btn:hover {
+            background: transparent;
+            color: #3b5998;
+        }
+
+        .thank-you-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .thank-you-content i {
+            font-size: 60px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-content h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .thank-you-content p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .demo-credentials {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .demo-credentials h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .demo-credentials p {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .close-thank-you {
+            margin-top: 20px;
+        }
+
+
+        /* Fixed side bar for Social Media */
+        /* social media side bar */
+        .fixedsocial-icons {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3));
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover::before {
+            transform: translateX(100%);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Individual icon colors */
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .twitter {
+            background-color: #1da1f2;
+        }
+
+        .linkedin {
+            background-color: #0077b5;
+        }
+
+        .youtube {
+            background-color: #ff0000;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Custom Cursor */
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            pointer-events: none;
+            mix-blend-mode: difference;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+        }
+        
+        .cursor-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--primary-color);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease-out, background 0.1s ease, border 0.1s ease;
+        }
+        
+        .cursor.hover,
+        .cursor-follower.hover {
+            transform: translate(-50%, -50%) scale(1.5);
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+                /* Responsive Styles */
+        @media (max-width: 992px) {
+            .product-hero .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .product-hero .hero-btns {
+                justify-content: center;
+            }
+            
+            .product-intro .intro-content {
+                flex-direction: column;
+            }
+            
+            .contact-cta .cta-content {
+                flex-direction: column;
+            }
+            
+            .contact-cta .cta-form {
+                max-width: 100%;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+                padding: 0;
+                margin-top: 10px;
+            }
+            
+            .dropdown:hover .dropdown-menu {
+                transform: none;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+            
+            .product-hero h1 {
+                font-size: 36px;
+            }
+            
+            .product-hero h2 {
+                font-size: 20px;
+            }
+            
+            .product-hero .hero-btns {
+                flex-direction: column;
+            }
+            
+            .cta-title {
+                font-size: 32px;
+            }
+            
+            .footer-bottom {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .cta-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .stat-item {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .top-bar-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .product-hero {
+                padding: 80px 0 60px;
+            }
+            
+            .product-hero h1 {
+                font-size: 30px;
+            }
+            
+            .product-intro .intro-text h2 {
+                font-size: 26px;
+            }
+            
+            .contact-cta .cta-text h2 {
+                font-size: 28px;
+            }
+            
+            .cta-btns {
+                flex-direction: column;
+            }
+            
+            .cta-btns .btn {
+                width: 100%;
+            }
+            
+            .modal-content {
+                padding: 20px;
+            }
+            
+            .brochure-viewer {
+                height: 300px;
+            }
+        }
+        /* Hide social media buttons on mobile devices */
+        @media (max-width: 768px) {
+            .fixedsocial-icons {
+                right: -60px;
+                transition: right 0.3s ease;
+            }
+
+            .fixedsocial-icons:hover {
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="hotline">
+                <i class="fas fa-phone-alt"></i>
+                <span>Hot Line: +8801713493026</span>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/daffodilsoft"title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/daffodilsoft"title="twitter"> <i class="fab fa-twitter"></i></a>
+                <a href="https://bd.linkedin.com/company/daffodilsoft"title="linkedin"> <i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/daffodilsoftwareltd"title="instagram"> <i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC8T6VFg_Hi4d0vSeQRkZT7Q"title="youtube"> <i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Navigation -->
+      <nav class="main-nav">
+        <div class="container nav-container">
+            <a class='logo' href='../index.html'>
+                <img src="../images/logo.png" alt="DSL Logo" class="logo-img">
+              </a>            <ul class="nav-links">
+                <li><a href='../index.html'>Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Products <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href='smart-edu.html'>Smart Edu</a></li>
+                        <li><a href='smart-hospital.html'>Smart Hospital</a></li>
+                        <li><a href='smart-business.html'>Smart Business 24</a></li>
+                        <li><a href='iums.html'>IUMS</a></li>
+                        <li><a href='1card.html'>1 Card</a></li>
+                        <li><a href='virtual-gate.html'>Virtual Gate</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href='../services/custom-software-development.html'>Custom Software Development</a></li>
+                        <li><a href='../services/odoo-erp-customization.html'>Odoo ERP Customization</a></li>
+                        <li><a href='../services/mobile-apps-development.html'>Mobile Apps Development</a></li>
+                        <li><a href='../services/web-ecommerce-development.html'>Web & E-Commerce Development</a></li>
+                        <li><a href='../services/software-testing-services.html'>Software Testing Services</a></li>
+                        <li><a href='../services/it-cloud-services.html'>IT and Cloud Services</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">About <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href='../about/company-profile.html'>Company Profile</a></li>
+                        <li><a href='../about/message-from-md.html'>Message from MD</a></li>
+                        <li><a href='../about/career.html'>Career</a></li>
+                    </ul>   
+                </li>
+                <li><a href='../portfolio.html'>Portfolio</a></li>
+
+                <li><a href='../contact-us.html'>Contact Us</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Hero Section -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href='../index.html'>Home</a> / <a href="#">Products</a> / <span>IUMS</span>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="animate__animated animate__fadeInDown">IUMS</h1>
+                    <h2 class="animate__animated animate__fadeInUp animate__delay-1s">Integrated University Management System</h2>
+                    <p class="animate__animated animate__fadeInUp animate__delay-2s">Transform your university operations with our intelligent all-in-one digital platform</p>
+                    <div class="hero-btns animate__animated animate__fadeInUp animate__delay-3s">
+                        <a href="#" class="btn btn-demo">Request a Demo</a>
+                        <a href="#" class="btn btn-brochure">See Brochure</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1563394867331-e687a36112fd?q=80&amp;w=1176&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Smart Edu Dashboard">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Introduction Section -->
+    <section class="product-intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>Revolutionizing Higher Education with IUMS</h2>
+                    <p>Welcome to IUMS – a powerful platform designed to modernize and streamline academic, administrative, and financial operations across universities and higher education institutions.</p>
+                    <p>IUMS is more than just software; it's a strategic partner in academic excellence and operational efficiency. From seamless admission and curriculum planning to blockchain-based degree verification and student engagement portals, IUMS empowers institutions to thrive in a fast-evolving digital landscape.</p>
+                    <p>Deliver a connected, transparent, and engaging academic experience for students, faculty, and administrators with IUMS – the future of higher education management.</p>
+                </div>
+                <div class="intro-video">
+                    <div class="video-container">
+                        <iframe width="1397" height="786" src="https://www.youtube.com/embed/ABAcMAFDeFQ" title="Integrated University Management System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Modules Section -->
+  <!-- Core Modules Section -->
+<section class="core-modules">
+    <div class="container">
+        <h2 class="section-title">Core Modules</h2>
+        <p class="section-description">Comprehensive features for managing every aspect of university life and operations</p>
+        
+        <div class="modules-grid">
+            <!-- Core Academic Modules -->
+            <div class="module-card">
+                <div class="module-header">
+                    <h3>Core Academic Modules</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Admission Management</li>
+                        <li>Curriculum Management</li>
+                        <li>Course Enrollment</li>
+                        <li>Routine and Classroom Management</li>
+                        <li>Student Management</li>
+                        <li>Course Evaluation</li>
+                        <li>Exam Management</li>
+                        <li>Result and Grading</li>
+                        <li>ID Card and Certificate Preparation</li>
+                        <li>Blockchain-Based Degree Verification</li>
+                        <li>Student Portal</li>
+                        <li>Teacher Portal</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Additional Academic Modules -->
+            <div class="module-card">
+                <div class="module-header">
+                    <h3>Additional Academic Modules</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Learning Management System (LMS)</li>
+                        <li>Outcome Based Education (OBE)</li>
+                        <li>Library Management</li>
+                        <li>Alumni Management</li>
+                        <li>Parents Portal</li>
+                        <li>Hostel Management</li>
+                        <li>Transportation Management</li>
+                        <li>University Institutes Management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Administrative Modules -->
+            <div class="module-card">
+                <div class="module-header">
+                    <h3>Administrative Modules</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Dashboard</li>
+                        <li>HR, Attendance & Payroll</li>
+                        <li>Recruitment & Performance Appraisals</li>
+                        <li>Reception and Helpdesk</li>
+                        <li>Security and Access Control</li>
+                        <li>Reporting and Analytics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Accounting & Operational Modules -->
+            <div class="module-card">
+                <div class="module-header">
+                    <h3>Accounting & Operational Modules</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Procurement</li>
+                        <li>Inventory</li>
+                        <li>Payment Collection</li>
+                        <li>Bill Payment</li>
+                        <li>Budgeting and Expense</li>
+                        <li>Approval Management</li>
+                        <li>Finance and Accounts</li>
+                        <li>Asset Management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Marketing & Communication Modules -->
+            <div class="module-card">
+                <div class="module-header">
+                    <h3>Marketing & Communication Modules</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Student Counseling & CRM</li>
+                        <li>Email Marketing</li>
+                        <li>SMS Marketing</li>
+                        <li>Event, Meeting & Seminar Management</li>
+                        <li>Website and CMS</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Key Advantages Section -->
+ <!-- Key Advantages Section -->
+<section class="key-advantages">
+    <div class="container">
+        <h2 class="section-title">Key Advantages</h2>
+        <p class="section-description">Discover how IUMS empowers universities with smart, scalable, and student-focused solutions</p>
+        
+        <div class="advantages-grid">
+           <!-- Advantage 1 -->
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="50">
+                <div class="advantage-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Efficient Academic Management</h3>
+                <p>Streamlines academic operations from admissions to results for smooth academic administration.</p>
+                <div class="advantage-wave"></div>
+            </div>
+
+            <!-- Advantage 2 -->
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="advantage-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Student-Centric Experience</h3>
+                <p>Empowers students through dedicated portals and access to evaluations, results, and academic history.</p>
+                <div class="advantage-wave"></div>
+            </div>
+
+            <!-- Advantage 3 -->
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="advantage-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3>Innovative Degree Verification</h3>
+                <p>Leverages blockchain technology for secure and tamper-proof degree authentication.</p>
+                <div class="advantage-wave"></div>
+            </div>
+
+            <!-- Advantage 4 -->
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="advantage-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Comprehensive Learning Tools</h3>
+                <p>Includes a robust LMS for interactive learning and seamless content delivery.</p>
+                <div class="advantage-wave"></div>
+            </div>
+
+            <!-- Advantage 5 -->
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="advantage-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Alumni and Parent Engagement</h3>
+                <p>Connects stakeholders through alumni and parent portals for greater community involvement.</p>
+                <div class="advantage-wave"></div>
+            </div>
+
+            <!-- Advantage 6 -->
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="advantage-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Resource Optimization</h3>
+                <p>Enhances allocation and use of resources, reducing operational waste and cost.</p>
+                <div class="advantage-wave"></div>
+            </div>
+
+            <!-- Advantage 7 -->
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="350">
+                <div class="advantage-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <h3>Real-Time Analytics</h3>
+                <p>Delivers insightful reports and dashboards for strategic, data-driven decisions.</p>
+                <div class="advantage-wave"></div>
+            </div>
+
+            <!-- Advantage 8 -->
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="advantage-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Eco-Friendly Operations</h3>
+                <p>Promotes paperless processes and environmental sustainability.</p>
+                <div class="advantage-wave"></div>
+            </div>
+
+            <!-- Advantage 9 -->
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="450">
+                <div class="advantage-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>Remote Accessibility</h3>
+                <p>Cloud-enabled access supports academic continuity from anywhere.</p>
+                <div class="advantage-wave"></div>
+            </div>
+
+            <!-- Advantage 10 -->
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="advantage-icon">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </div>
+                <h3>Scalable Infrastructure</h3>
+                <p>Grows with your institution, adapting to future needs with flexible, modular architecture.</p>
+                <div class="advantage-wave"></div>
+            </div>
+
+        </div>
+        
+       
+    </div>
+</section>
+
+
+    <!-- Clients Section -->
+    <section class="clients-section">
+        <div class="container">
+            <h2 class="section-title">Our Esteemed Clients</h2>
+            <p class="section-description">Trusted by top universities and institutions committed to innovation in education</p>
+            
+            <div class="client-logos-container">
+                <div class="client-logos-track">
+                    <div class="client-logo-item">
+                        <img src="https://via.placeholder.com/150x80?text=ABC+School" alt="ABC International School">
+                        <div class="client-tooltip">
+                            <h4>ABC International School</h4>
+                            <p>Improved academic efficiency and paperless operations with Smart Edu</p>
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="https://via.placeholder.com/150x80?text=XYZ+College" alt="XYZ College">
+                        <div class="client-tooltip">
+                            <h4>XYZ College</h4>
+                            <p>Streamlined administration and better parent engagement</p>
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="https://via.placeholder.com/150x80?text=Sunshine+Academy" alt="Sunshine Academy">
+                        <div class="client-tooltip">
+                            <h4>Sunshine Academy</h4>
+                            <p>Reduced paperwork by 80% with our digital solution</p>
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="https://via.placeholder.com/150x80?text=Global+University" alt="Global University">
+                        <div class="client-tooltip">
+                            <h4>Global University</h4>
+                            <p>Integrated university management for 15,000+ students</p>
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="https://via.placeholder.com/150x80?text=City+Public+School" alt="City Public School">
+                        <div class="client-tooltip">
+                            <h4>City Public School</h4>
+                            <p>Automated attendance and grading system saved 300+ hours monthly</p>
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="https://via.placeholder.com/150x80?text=Prestige+College" alt="Prestige College">
+                        <div class="client-tooltip">
+                            <h4>Prestige College</h4>
+                            <p>Financial management made simple with our accounting modules</p>
+                        </div>
+                    </div>
+                    <!-- Duplicate items for infinite loop -->
+                    <div class="client-logo-item">
+                        <img src="https://via.placeholder.com/150x80?text=ABC+School" alt="ABC International School">
+                        <div class="client-tooltip">
+                            <h4>ABC International School</h4>
+                            <p>Improved academic efficiency and paperless operations with Smart Edu</p>
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <img src="https://via.placeholder.com/150x80?text=XYZ+College" alt="XYZ College">
+                        <div class="client-tooltip">
+                            <h4>XYZ College</h4>
+                            <p>Streamlined administration and better parent engagement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to Transform Your University?</h2>
+                    <p>Our team is here to help you implement IUMS and take your institution to the next level.</p>
+                    <div class="cta-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">6+</div>
+                            <div class="stat-label">Hospitals & Clinics</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Uptime</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-form">
+                    <h3>Get in Touch</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Company Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                            <!-- changed -->
+                        <div class="form-group">
+                        <label for="product-select">Choose a product:</label>
+                        <select id="product-select" name="product">
+                            <option value="">Select Product</option>
+                            <option value="smart-edu" selected>Smart Edu</option>
+                            <option value="smart-hospital">Smart Hospital</option>
+                            <option value="smart-business">Smart Business 24</option>
+                            <option value="iums">IUMS</option>
+                            <option value="1card">1 Card</option>
+                            <option value="virtual-gate">Virtual Gate</option>
+                        </select>
+                        </div>  
+
+                        <div class="form-group">
+                            <textarea placeholder="Additional Notes"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-large">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+
+    <!-- Demo Request Modal -->
+    <div class="modal" id="demoModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Request a Demo</h2>
+            <p>Fill out the form below to schedule a personalized demo of IUMS</p>
+            <form id="demoForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Company Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Select Product</option>
+                        <option value="smart-edu" >Smart Edu</option>
+                        <option value="smart-hospital">Smart Hospital</option>
+                        <option value="smart-business">Smart Business 24</option>
+                        <option value="iums"selected>IUMS</option>
+                        <option value="1card">1 Card</option>
+                        <option value="virtual-gate">Virtual Gate</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-large">Request Demo</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Brochure Modal -->
+    <div class="modal" id="brochureModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>IUMS Brochure</h2>
+            <div class="brochure-viewer">
+                <iframe src="https://drive.google.com/file/d/1DBgCdcGt-6DRZl37aYMBVEmT5TrKqVzn/preview" frameborder="0"></iframe>
+            </div>
+            <div class="brochure-actions">
+                <a href="../Brochures/IUMS%20Brochure.pdf" download class="btn btn-secondary">
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+                <button class="btn share-btn">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thank You Modal -->
+    <div class="modal" id="thankYouModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="thank-you-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>Thank You!</h2>
+                <p>Thank you for requesting a demo. Please check your email for access details and further instructions.</p>
+                <p>We appreciate your interest in Daffodil Software Ltd. For any assistance, feel free to call <strong>+8801713493026</strong>.</p>
+                <div class="demo-credentials">
+                    <h4>Demo Access:</h4>
+                    <p> <strong>Demo Link:</strong>  <a href='../contact-us.html' rel='noopener' target='_blank'>https://demo-iums.daffodilsoft.com</a></p>
+                    <p><strong>Login ID:</strong> demo-iums@gmail.com</p>
+                    <p><strong>Password:</strong> ******</p>
+                </div>
+                <button class="btn close-thank-you">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Daffodil Software Limited</h3>
+                    <p>Your Trusted Partner in Digital Success</p>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+8801713493026</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>software@daffodil-bd.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Daffodil Tower, 102/1, Shukrabad, Mirpur Road, Dhanmondi, Dhaka-1207</span>
+                    </div>
+                    <div class="footer-certificates">
+                        <img src="https://via.placeholder.com/80x80?text=ISO+9001" alt="ISO 9001 Certified">
+                        <img src="https://via.placeholder.com/80x80?text=Microsoft+Partner" alt="Microsoft Partner">
+                        <img src="https://via.placeholder.com/80x80?text=Odoo+Partner" alt="Odoo Partner">
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">At A Glance</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Career</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href='smart-edu.html'>Smart Edu</a></li>
+                        <li><a href='smart-hospital.html'>Smart Hospital</a></li>
+                        <li><a href='smart-business.html'>Smart Business 24</a></li>
+                        <li><a href='iums.html'>IUMS</a></li>
+                        <li><a href='1card.html'>1 Card</a></li>
+                        <li><a href='virtual-gate.html'>Virtual Gate</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Insights</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">White Papers</a></li>
+                        <li><a href="#">News & Events</a></li>
+                    </ul>
+                    <div class="footer-newsletter">
+                        <h4>Subscribe to Newsletter</h4>
+                        <form>
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit"aria-label="Subscribe to Newsletter"><i class="fas fa-paper-plane"></i></button>
+                        </form>>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>A proud concern of Daffodil Family</p>
+                </div>
+                <div class="footer-bottom-center">
+                    <p>© 2025 Daffodil Software Ltd. All Rights Reserved.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <p>Connect with DSL: 
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Fixed side bar for Social Media -->
+    <div class="fixedsocial-icons">
+        <a href="https://www.facebook.com/daffodilsoft" class="social-icon facebook" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://bd.linkedin.com/company/daffodilsoft" class="social-icon linkedin" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com/daffodilsoft" class="social-icon twitter" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UC8T6VFg_Hi4d0vSeQRkZT7Q" class="social-icon youtube" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+
+
+
+<!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Custom Mouse Animation -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-times');
+                this.querySelector('i').classList.toggle('fa-bars');
+            });
+
+            // Handle dropdown menus on mobile
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Module Cards Accordion with hover effect
+            const moduleCards = document.querySelectorAll('.module-card');
+            
+            moduleCards.forEach(card => {
+                const header = card.querySelector('.module-header');
+                
+                // Click functionality for mobile
+                header.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        // Close all other cards
+                        moduleCards.forEach(otherCard => {
+                            if (otherCard !== card && otherCard.classList.contains('active')) {
+                                otherCard.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle current card
+                        card.classList.toggle('active');
+                    }
+                });
+
+                // Hover functionality for desktop
+                if (window.innerWidth > 768) {
+                    card.addEventListener('mouseenter', function() {
+                        // Close all other cards
+                        moduleCards.forEach(otherCard => {
+                            if (otherCard !== card && otherCard.classList.contains('active')) {
+                                otherCard.classList.remove('active');
+                            }
+                        });
+                        
+                        // Open current card
+                        card.classList.add('active');
+                    });
+
+                    // Keep card open when hovering over content
+                    card.addEventListener('mouseleave', function(e) {
+                        // Check if mouse is leaving the card entirely
+                        if (!card.contains(e.relatedTarget)) {
+                            card.classList.remove('active');
+                        }
+                    });
+                }
+            });
+
+            // Client Logos Auto-Scrolling
+            const clientTrack = document.querySelector('.client-logos-track');
+            let clientPosition = 0;
+            const clientScrollSpeed = 1;
+            let clientAnimationId;
+
+            function animateClients() {
+                clientPosition -= clientScrollSpeed;
+                
+                // Reset position when scrolled all items
+                if (clientPosition < -clientTrack.scrollWidth / 2) {
+                    clientPosition = 0;
+                }
+                
+                clientTrack.style.transform = `translateX(${clientPosition}px)`;
+                clientAnimationId = requestAnimationFrame(animateClients);
+            }
+
+            // Modal Handling
+            const demoBtns = document.querySelectorAll('.btn-demo');
+            const brochureBtns = document.querySelectorAll('.btn-brochure');
+            const demoModal = document.getElementById('demoModal');
+            const brochureModal = document.getElementById('brochureModal');
+            const thankYouModal = document.getElementById('thankYouModal');
+            const closeModalBtns = document.querySelectorAll('.close-modal');
+            const closeThankYouBtn = document.querySelector('.close-thank-you');
+            const demoForm = document.getElementById('demoForm');
+            const contactForm = document.getElementById('contactForm');
+
+            // Open Demo Modal
+            demoBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    demoModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Open Brochure Modal
+            brochureBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    brochureModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close Modals
+            closeModalBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    demoModal.style.display = 'none';
+                    brochureModal.style.display = 'none';
+                    thankYouModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // Close Thank You Modal
+            if (closeThankYouBtn) {
+                closeThankYouBtn.addEventListener('click', function() {
+                    thankYouModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === demoModal) {
+                    demoModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                if (e.target === brochureModal) {
+                    brochureModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                if (e.target === thankYouModal) {
+                    thankYouModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Demo Form Submission
+            if (demoForm) {
+                demoForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    demoModal.style.display = 'none';
+                    thankYouModal.style.display = 'block';
+                    
+                    // Here you would typically send the form data to your server
+                    // For demo purposes, we're just showing the thank you modal
+                });
+            }
+
+            // Contact Form Submission
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Show thank you message (could be enhanced with actual form submission)
+                    alert('Thank you for reaching out. Our team will contact you shortly. For urgent support, call us at +8801713493026. We appreciate your interest in Smart Edu!');
+                    
+                    // Reset form
+                    contactForm.reset();
+                });
+            }
+
+            // Share Button Functionality
+            const shareBtn = document.querySelector('.share-btn');
+            if (shareBtn) {
+                shareBtn.addEventListener('click', function() {
+                    if (navigator.share) {
+                        navigator.share({
+                            title: 'Smart Edu Brochure',
+                            text: 'Check out the Smart Edu brochure from Daffodil Software Ltd',
+                            url: '/brochure/smart-edu-brochure.pdf',
+                        })
+                        .catch(err => {
+                            console.log('Error sharing:', err);
+                            alert('Sharing failed. Please try again or copy the link manually.');
+                        });
+                    } else {
+                        // Fallback for browsers that don't support Web Share API
+                        alert('Web Share API not supported in your browser. Please copy the link manually.');
+                    }
+                });
+            }
+
+            // Start animations
+            animateClients();
+
+            // Clean up animations when tab is inactive
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    cancelAnimationFrame(clientAnimationId);
+                } else {
+                    animateClients();
+                }
+            });
+
+            // Update module card behavior on window resize
+            window.addEventListener('resize', function() {
+                moduleCards.forEach(card => {
+                    if (window.innerWidth > 768) {
+                        // Remove click event and add hover for desktop
+                        card.querySelector('.module-header').removeEventListener('click', handleModuleClick);
+                        card.addEventListener('mouseenter', handleModuleHover);
+                        card.addEventListener('mouseleave', handleModuleLeave);
+                    } else {
+                        // Remove hover events and add click for mobile
+                        card.removeEventListener('mouseenter', handleModuleHover);
+                        card.removeEventListener('mouseleave', handleModuleLeave);
+                        card.querySelector('.module-header').addEventListener('click', handleModuleClick);
+                    }
+                });
+            });
+
+            function handleModuleClick() {
+                const card = this.closest('.module-card');
+                // Close all other cards
+                moduleCards.forEach(otherCard => {
+                    if (otherCard !== card && otherCard.classList.contains('active')) {
+                        otherCard.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current card
+                card.classList.toggle('active');
+            }
+
+            function handleModuleHover() {
+                const card = this;
+                // Close all other cards
+                moduleCards.forEach(otherCard => {
+                    if (otherCard !== card && otherCard.classList.contains('active')) {
+                        otherCard.classList.remove('active');
+                    }
+                });
+                
+                // Open current card
+                card.classList.add('active');
+            }
+
+            function handleModuleLeave(e) {
+                const card = this;
+                // Check if mouse is leaving the card entirely
+                if (!card.contains(e.relatedTarget)) {
+                    card.classList.remove('active');
+                }
+            }
+        });
+
+         // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+  
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+  
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  
+    // Scroll Animations
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate__animated');
+      const windowHeight = window.innerHeight;
+      const triggerPoint = windowHeight / 1.3;
+  
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        
+        if (elementPosition < triggerPoint) {
+          const animation = element.classList.contains('animate__fadeInUp') ? 'fadeInUp' :
+                           element.classList.contains('animate__fadeInDown') ? 'fadeInDown' :
+                           element.classList.contains('animate__fadeInLeft') ? 'fadeInLeft' :
+                           element.classList.contains('animate__fadeInRight') ? 'fadeInRight' : 'fadeIn';
+          
+          element.classList.add(`animate__${animation}`);
+        }
+      });
+    };
+    </script>
+</body>
+
+<!-- Mirrored from daffodilsoft.netlify.app/products/iums by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jun 2025 20:06:01 GMT -->
+</html>

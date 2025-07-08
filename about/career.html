@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from daffodilsoft.netlify.app/about/career by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jun 2025 20:06:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career - Daffodil Software Ltd</title>
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Base Styles from previous template */
+        
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #ff6600;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --text-color: #444;
+            --text-light: #777;
+            --white: #fff;
+            --black: #000;
+            --gray: #e9ecef;
+            --dark-gray: #6c757d;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+                * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn-large {
+            padding: 15px 35px;
+            font-size: 16px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            position: relative;
+            text-align: center;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hotline i {
+            margin-right: 8px;
+            color: var(--secondary-color);
+        }
+
+        .social-icons a {
+            color: var(--white);
+            margin-left: 15px;
+            font-size: 16px;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Main Navigation */
+        .main-nav {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            position: relative;
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a i {
+            margin-left: 5px;
+            font-size: 12px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            width: 220px;
+            box-shadow: var(--shadow);
+            border-radius: 5px;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(10px);
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .dropdown-menu a {
+            padding: 10px 20px;
+            display: block;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--gray);
+            color: var(--primary-color);
+            padding-left: 25px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        
+        /* Career Page Specific Styles */
+        .career-hero {
+            background: linear-gradient(rgba(0, 102, 204, 0.9), rgba(0, 102, 204, 0.9)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80') no-repeat center center/cover;
+            color: var(--white);
+            padding: 120px 0 100px;
+            text-align: center;
+        }
+        
+        .career-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s;
+        }
+
+        
+
+        .career-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s;
+        }
+
+        .job-openings {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .job-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: var(--white);
+            border: 1px solid var(--gray);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .job-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .job-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        
+
+        .job-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-header {
+            padding: 25px;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        
+
+        .job-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .job-meta span {
+            display: flex;
+            align-items: center;
+        }
+
+        .job-meta i {
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
+
+        .job-description {
+            padding: 25px;
+            color: var(--text-light);
+        }
+
+        .job-description p {
+            margin-bottom: 20px;
+        }
+
+        .job-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .skill-tag {
+            background: var(--gray);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            color: var(--text-color);
+        }
+                .job-footer {
+            padding: 0 25px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .view-details {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .view-details i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .view-details:hover i {
+            transform: translateX(5px);
+        }
+
+        .company-culture {
+            padding: 80px 0;
+            background: var(--white);
+        }
+                .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .culture-card {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 10px;
+            background: var(--light-color);
+            transition: var(--transition);
+        }
+
+        .culture-card:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-10px);
+        }
+
+        .culture-card:hover .culture-icon {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .culture-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            transition: var(--transition);
+        }
+
+        .culture-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .team-section {
+            padding: 80px 0;
+            background: var(--light-color);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-photo {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .member-info {
+            padding: 25px;
+        }
+
+        .member-name {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .member-position {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .member-bio {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .member-social a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--gray);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+
+        .member-social a:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .iq-test-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .iq-test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .iq-test-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .iq-test-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .iq-test-description {
+            color: var(--text-light);
+        }
+
+        .iq-test-question {
+            margin-bottom: 30px;
+            animation: fadeIn 0.5s;
+        }
+
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .options-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+                .option-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: var(--white);
+            border: 1px solid var(--gray);
+            border-radius: 5px;
+            text-align: left;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option-btn:hover {
+            border-color: var(--primary-color);
+            background: rgba(0, 102, 204, 0.05);
+        }
+
+        .option-btn.selected {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .iq-test-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: var(--gray);
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--primary-color);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .iq-test-results {
+            display: none;
+            text-align: center;
+            animation: fadeIn 1s;
+        }
+
+        .result-score {
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
+
+        .result-message {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .high-scores {
+            margin-top: 40px;
+        }
+
+        .high-scores h3 {
+            margin-bottom: 20px;
+        }
+
+        .score-list {
+            list-style: none;
+        }
+        
+
+        .score-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: var(--white);
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .score-name {
+            font-weight: 600;
+        }
+
+        .score-value {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .apply-section {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 102, 204, 0.05), rgba(0, 102, 204, 0.05));
+        }
+
+        .apply-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .apply-form .form-group {
+            margin-bottom: 25px;
+        }
+
+        .apply-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .apply-form input,
+        .apply-form select,
+        .apply-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray);
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .apply-form input:focus,
+        .apply-form select:focus,
+        .apply-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .apply-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload-btn {
+            border: 2px dashed var(--gray);
+            border-radius: 5px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .file-upload-btn:hover {
+            border-color: var(--primary-color);
+            background: rgba(0, 102, 204, 0.05);
+        }
+
+        .file-upload-input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-name {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalFadeIn 0.3s;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            color: var(--dark-color);
+        }
+
+        .modal-close {
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .modal-footer {
+            padding: 20px;
+            border-top: 1px solid var(--gray);
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0 0 80px;
+        }
+
+        .map-container {
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        
+
+        /* Fixed side bar for Social Media */
+        .fixedsocial-icons {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+        }
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3));
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        .social-icon:hover::before {
+            transform: translateX(100%);
+        }
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Individual icon colors */
+        .facebook {
+            background-color: #3b5998;
+        }
+        .twitter {
+            background-color: #1da1f2;
+        }
+        .linkedin {
+            background-color: #0077b5;
+        }
+        .youtube {
+            background-color: #ff0000;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 80px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact-item i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-newsletter h4 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-newsletter form {
+            display: flex;
+        }
+
+        .footer-newsletter input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 14px;
+        }
+
+        .footer-newsletter button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .footer-newsletter button:hover {
+            background: var(--secondary-color);
+        }
+
+        .footer-certificates {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-certificates img {
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .footer-certificates img:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .footer-bottom a {
+            color: var(--gray);
+            margin: 0 10px;
+            font-size: 18px;
+            transition: var(--transition);
+        }
+
+        .footer-bottom a:hover {
+            color: var(--secondary-color);
+        }
+
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Custom Cursor */
+        .cursor-letter {
+        position: fixed; /* use fixed instead of absolute */
+        top: 0;
+        left: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: #281313;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 600;
+        pointer-events: none;
+        opacity: 0.9;
+        transition: transform 0.1s ease;
+
+        /* Make sure it's on top of everything */
+        z-index: 999999;
+        mix-blend-mode: difference; /* Optional for modern UI contrast */
+        }
+
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .career-hero h1 {
+                font-size: 42px;
+            }
+            
+            .career-hero p {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+                padding: 0;
+                margin-top: 10px;
+            }
+            
+            .dropdown:hover .dropdown-menu {
+                transform: none;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+            
+            .job-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .job-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .top-bar-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .career-hero {
+                padding: 80px 0 60px;
+            }
+            
+            .career-hero h1 {
+                font-size: 36px;
+            }
+            
+            .career-hero p {
+                font-size: 16px;
+            }
+            
+            .iq-test-container,
+            .apply-container {
+                padding: 30px 20px;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+        }
+        /* Hide social media side bar buttons on mobile devices */
+        @media (max-width: 768px) {
+            .fixedsocial-icons {
+                right: -60px;
+                transition: right 0.3s ease;
+            }
+
+            .fixedsocial-icons:hover {
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+
+    </style>
+    </head>
+</head>
+     <!-- Floating Trail Letters cursor-->
+        <div class="cursor-letter" id="d">D</div>
+        <div class="cursor-letter" id="s">S</div>
+        <div class="cursor-letter" id="l">L</div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="hotline">
+                <i class="fas fa-phone-alt"></i>
+                <span>Hot Line: +8801713493026</span>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/daffodilsoft" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/daffodilsoft" title="twitter"> <i class="fab fa-twitter"></i></a>
+                <a href="https://bd.linkedin.com/company/daffodilsoft" title="linkedin"> <i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/daffodilsoftwareltd" title="instagram"> <i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC8T6VFg_Hi4d0vSeQRkZT7Q" title="youtube"> <i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a class='logo' href='../index.html'>
+                <img src="../images/logo.png" alt="DSL Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href='../index.html'>Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Products <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href='../products/smart-edu.html'>Smart Edu</a></li>
+                        <li><a href='../products/smart-hospital.html'>Smart Hospital</a></li>
+                        <li><a href='../products/smart-business.html'>Smart Business 24</a></li>
+                        <li><a href='../products/iums.html'>IUMS</a></li>
+                        <li><a href='../products/1card.html'>1 Card</a></li>
+                        <li><a href='../products/virtual-gate.html'>Virtual Gate</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href='../services/custom-software-development.html'>Custom Software Development</a></li>
+                        <li><a href='../services/odoo-erp-customization.html'>Odoo ERP Customization</a></li>
+                        <li><a href='../services/mobile-apps-development.html'>Mobile Apps Development</a></li>
+                        <li><a href="../Services/web-e-commerce-development.html">Web & E-Commerce Development</a></li>
+                        <li><a href='../services/software-testing-services.html'>Software Testing Services</a></li>
+                        <li><a href="../Services/it-and-cloud-services.html">IT and Cloud Services</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">About <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href='company-profile.html'>Company Profile</a></li>
+                        <li><a href='message-from-md.html'>Message from MD</a></li>
+                        <li><a href='career.html'>Career</a></li>
+                    </ul>   
+                </li>
+                <li><a href='../portfolio.html'>Portfolio</a></li>
+                <li><a href='../contact-us.html'>Contact Us</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+     <!-- Career Hero Section -->
+    <section class="career-hero">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Build Your Future With Us</h1>
+            <p class="animate__animated animate__fadeInUp">Join our team of innovators and problem solvers. At Daffodil Software, we're not just building software - we're building careers and shaping the future of technology.</p>
+            <a href="#job-openings" class="btn btn-secondary btn-large animate__animated animate__fadeInUp">View Open Positions</a>
+        </div>
+    </section>
+        <!-- Job Openings Section -->
+    <section id="job-openings" class="job-openings">
+        <div class="container">
+            <h2 class="section-title">Current Job Openings</h2>
+            <p class="section-description">Explore exciting career opportunities at Daffodil Software Ltd. Filter by department to find your perfect match.</p>
+            
+            <div class="job-filter">
+                <button class="filter-btn active" data-filter="all">All Positions</button>
+                <button class="filter-btn" data-filter="development">Development</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="qa">QA & Testing</button>
+                <button class="filter-btn" data-filter="management">Management</button>
+            </div>
+            
+            <div class="job-list">
+
+                <!-- Job Card 1 -->
+                <div class="job-card" data-category="development">
+                    <div class="job-header">
+                        <h3 class="job-title">Senior Software Engineer</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
+                            <span><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span><i class="fas fa-clock"></i> Posted 5 days ago</span>
+                        </div>
+                    </div>
+                    <div class="job-description">
+                        <p>We're looking for an experienced Senior Software Engineer to join our core product team. You'll be responsible for designing and implementing scalable solutions for our enterprise clients.</p>
+                        <div class="job-skills">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <a href="#" class="view-details" data-job="1">View Details <i class="fas fa-arrow-right"></i></a>
+                        <a href="#apply" class="btn" onclick="setJobPosition('Senior Software Engineer')">Apply Now</a>
+                    </div>
+                </div>
+                                
+                <!-- Job Card 2 -->
+                <div class="job-card" data-category="design">
+                    <div class="job-header">
+                        <h3 class="job-title">UI/UX Designer</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
+                            <span><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span><i class="fas fa-clock"></i> Posted 2 days ago</span>
+                        </div>
+                    </div>
+                    <div class="job-description">
+                        <p>Join our creative team as a UI/UX Designer to create beautiful, intuitive interfaces for our products. You'll work closely with product managers and developers to deliver exceptional user experiences.</p>
+                        <div class="job-skills">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Adobe XD</span>
+                            <span class="skill-tag">User Research</span>
+                            <span class="skill-tag">Prototyping</span>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <a href="#" class="view-details" data-job="2">View Details <i class="fas fa-arrow-right"></i></a>
+                        <a href="#apply" class="btn" onclick="setJobPosition('UI/UX Designer')">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Job Card 3 -->
+                <div class="job-card" data-category="marketing">
+                    <div class="job-header">
+                        <h3 class="job-title">Digital Marketing Specialist</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
+                            <span><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span><i class="fas fa-clock"></i> Posted 1 week ago</span>
+                        </div>
+                    </div>
+                    <div class="job-description">
+                        <p>We're seeking a Digital Marketing Specialist to develop and implement our digital marketing strategy. You'll manage our online presence, campaigns, and drive customer engagement.</p>
+                        <div class="job-skills">
+                            <span class="skill-tag">SEO</span>
+                            <span class="skill-tag">Social Media</span>
+                            <span class="skill-tag">Content Marketing</span>
+                            <span class="skill-tag">Google Ads</span>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <a href="#" class="view-details" data-job="3">View Details <i class="fas fa-arrow-right"></i></a>
+                        <a href="#apply" class="btn" onclick="setJobPosition('Digital Marketing Specialist')">Apply Now</a>
+                    </div>
+                </div>
+                                
+                <!-- Job Card 4 -->
+                <div class="job-card" data-category="qa">
+                    <div class="job-header">
+                        <h3 class="job-title">QA Automation Engineer</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
+                            <span><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span><i class="fas fa-clock"></i> Posted 3 days ago</span>
+                        </div>
+                    </div>
+                    <div class="job-description">
+                        <p>Join our quality assurance team to ensure the highest standards for our software products. You'll design and implement automated testing solutions and work closely with development teams.</p>
+                        <div class="job-skills">
+                            <span class="skill-tag">Selenium</span>
+                            <span class="skill-tag">Jest</span>
+                            <span class="skill-tag">Cypress</span>
+                            <span class="skill-tag">Test Automation</span>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <a href="#" class="view-details" data-job="4">View Details <i class="fas fa-arrow-right"></i></a>
+                        <a href="#apply" class="btn" onclick="setJobPosition('QA Automation Engineer')">Apply Now</a>
+                    </div>
+                </div>
+                                <!-- Job Card 5 -->
+                <div class="job-card" data-category="management">
+                    <div class="job-header">
+                        <h3 class="job-title">Project Manager</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
+                            <span><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span><i class="fas fa-clock"></i> Posted 2 weeks ago</span>
+                        </div>
+                    </div>
+                    <div class="job-description">
+                        <p>We're looking for an experienced Project Manager to lead our software development projects. You'll coordinate teams, manage timelines, and ensure successful project delivery.</p>
+                        <div class="job-skills">
+                            <span class="skill-tag">Agile</span>
+                            <span class="skill-tag">Scrum</span>
+                            <span class="skill-tag">JIRA</span>
+                            <span class="skill-tag">Team Leadership</span>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <a href="#" class="view-details" data-job="5">View Details <i class="fas fa-arrow-right"></i></a>
+                        <a href="#apply" class="btn" onclick="setJobPosition('Project Manager')">Apply Now</a>
+                    </div>
+                </div>
+                                
+                <!-- Job Card 6 -->
+                <div class="job-card" data-category="development">
+                    <div class="job-header">
+                        <h3 class="job-title">Junior Frontend Developer</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
+                            <span><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span><i class="fas fa-clock"></i> Posted 1 day ago</span>
+                        </div>
+                    </div>
+                    <div class="job-description">
+                        <p>Great opportunity for a Junior Frontend Developer to start their career with us. You'll work with our senior developers to build responsive web applications using modern frameworks.</p>
+                        <div class="job-skills">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <a href="#" class="view-details" data-job="6">View Details <i class="fas fa-arrow-right"></i></a>
+                        <a href="#apply" class="btn" onclick="setJobPosition('Junior Frontend Developer')">Apply Now</a>
+                    </div>
+                    
+                
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Company Culture Section -->
+    <section class="company-culture">
+        <div class="container">
+            <h2 class="section-title">Our Culture</h2>
+            <p class="section-description">At Daffodil Software, we foster a culture of innovation, collaboration, and continuous learning.</p>
+            
+            <div class="culture-grid">
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="culture-title">Innovation</h3>
+                    <p>We encourage creative thinking and reward innovative solutions to complex problems.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="culture-title">Collaboration</h3>
+                    <p>Teamwork is at our core. We believe the best solutions come from working together.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="culture-title">Learning</h3>
+                    <p>Continuous learning is part of our DNA. We invest in your professional growth.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="culture-title">Work-Life Balance</h3>
+                    <p>We value your time and wellbeing with flexible hours and remote work options.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="culture-title">Recognition</h3>
+                    <p>Your hard work doesn't go unnoticed. We celebrate achievements big and small.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="culture-title">Global Impact</h3>
+                    <p>Our solutions reach clients worldwide, giving your work international exposure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Meet Our Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-description">Get to know some of the talented professionals who make Daffodil Software Ltd a great place to work.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="../../static.vecteezy.com/system/resources/thumbnails/029/153/039/small/collage-of-portraits-and-faces-of-smiling-multiracial-group-of-various-diverse-people-for-profile-picture-on-colorful-background-diversity-concept-gen" alt="Team Member" class="member-photo">
+                    <div class="member-info">
+                        <h3 class="member-name">Java Team</h3> 
+                        <p class="member-bio">Builds scalable and robust applications using modern technologies and clean code practices.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="../../st.depositphotos.com/1177973/3626/i/950/depositphotos_36264749-stock-photo-collage-of-many-different-human.jpg" alt="Team Member" class="member-photo">
+                    <div class="member-info">
+                        <h3 class="member-name">Odoo Team</h3>
+                        <p class="member-bio">Our expert odoo team delivers high-impact, enterprise-grade solutions with proven success across major projects.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="../../media.istockphoto.com/id/1174492182/photo/istockphoto-1174492182-612x6127f4a.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=ZcP3LJX5YrjSmVkdrxykiRC3Pql3TVfECMCLBxtSBYQ=" alt="Team Member" class="member-photo">
+                    <div class="member-info">
+                        <h3 class="member-name">Testing Team</h3>
+                        <p class="member-bio">A detail-oriented QA team excelling in both manual and automated testing—ensuring top-tier product quality with zero-compromise standards.</p>
+
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="../../static.vecteezy.com/system/resources/thumbnails/029/153/039/small/collage-of-portraits-and-faces-of-smiling-multiracial-group-of-various-diverse-people-for-profile-picture-on-colorful-background-diversity-concept-gen" alt="Team Member" class="member-photo">
+                    <div class="member-info">
+                        <h3 class="member-name">Sales Marketing Team</h3>
+                        <p class="member-bio">Results-driven marketers and communicators—amplifying our brand and building strong customer relationships.</p>
+                    </div>           
+                </div>
+
+                <div class="team-member">
+                    <img src="../../static.vecteezy.com/system/resources/thumbnails/029/153/039/small/collage-of-portraits-and-faces-of-smiling-multiracial-group-of-various-diverse-people-for-profile-picture-on-colorful-background-diversity-concept-gen" alt="Team Member" class="member-photo">
+                    <div class="member-info">
+                        <h3 class="member-name">Sales Marketing Team</h3>
+                        <p class="member-bio">Results-driven marketers and communicators—amplifying our brand and building strong customer relationships.</p>
+                    </div>           
+                </div>
+
+                <div class="team-member">
+                    <img src="../../static.vecteezy.com/system/resources/thumbnails/029/153/039/small/collage-of-portraits-and-faces-of-smiling-multiracial-group-of-various-diverse-people-for-profile-picture-on-colorful-background-diversity-concept-gen" alt="Team Member" class="member-photo">
+                    <div class="member-info">
+                        <h3 class="member-name">Sales Marketing Team</h3>
+                        <p class="member-bio">Results-driven marketers and communicators—amplifying our brand and building strong customer relationships.</p>
+                    </div>           
+                </div>
+                <div class="team-member">
+                    <img src="../../static.vecteezy.com/system/resources/thumbnails/029/153/039/small/collage-of-portraits-and-faces-of-smiling-multiracial-group-of-various-diverse-people-for-profile-picture-on-colorful-background-diversity-concept-gen" alt="Team Member" class="member-photo">
+                    <div class="member-info">
+                        <h3 class="member-name">Sales Marketing Team</h3>
+                        <p class="member-bio">Results-driven marketers and communicators—amplifying our brand and building strong customer relationships.</p>
+                    </div>           
+                </div>
+
+                        <div class="team-member">
+                    <img src="../../static.vecteezy.com/system/resources/thumbnails/029/153/039/small/collage-of-portraits-and-faces-of-smiling-multiracial-group-of-various-diverse-people-for-profile-picture-on-colorful-background-diversity-concept-gen" alt="Team Member" class="member-photo">
+                    <div class="member-info">
+                        <h3 class="member-name">Sales Marketing Team</h3>
+                        <p class="member-bio">Results-driven marketers and communicators—amplifying our brand and building strong customer relationships.</p>
+                    </div>           
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Apply Section -->
+    <section id="apply" class="apply-section">
+        <div class="container">
+            <h2 class="section-title">Join Our Team</h2>
+            <p class="section-description">Ready to take the next step in your career? Apply now or submit your CV for future opportunities.</p>
+            
+            <div class="apply-container">
+                <form class="apply-form" id="career-form">
+                    <div class="form-group">
+                        <label for="full-name">Full Name *</label>
+                        <input type="text" id="full-name" name="full-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="position">Position Applying For *</label>
+                        <select id="position" name="position" required>
+                            <option value="">Select a position</option>
+                            <option value="Senior Software Engineer">Senior Software Engineer</option>
+                            <option value="UI/UX Designer">UI/UX Designer</option>
+                            <option value="Digital Marketing Specialist">Digital Marketing Specialist</option>
+                            <option value="QA Automation Engineer">QA Automation Engineer</option>
+                            <option value="Project Manager">Project Manager</option>
+                            <option value="Junior Frontend Developer">Junior Frontend Developer</option>
+                            <option value="Other">Other (Specify in Cover Letter)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">Area of Interest *</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select your interest</option>
+                            <option value="Software Development">Software Development</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Quality Assurance">Quality Assurance</option>
+                            <option value="Project Management">Project Management</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
+                            <option value="Business Analysis">Business Analysis</option>
+                            <option value="DevOps">DevOps</option>
+                            <option value="Data Science">Data Science</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cover-letter">Cover Letter</label>
+                        <textarea id="cover-letter" name="cover-letter" placeholder="Tell us why you'd be a great fit for this position..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cv-upload">Upload Your CV *</label>
+                        <div class="file-upload">
+                            <div class="file-upload-btn">
+                                <i class="fas fa-cloud-upload-alt" style="font-size: 24px; margin-bottom: 10px;"></i>
+                                <p>Click to upload or drag and drop</p>
+                                <p>PDF, DOC, DOCX (Max. 5MB)</p>
+                                <input type="file" id="cv-upload" name="cv-upload" class="file-upload-input" accept=".pdf,.doc,.docx" required>
+                            </div>
+                            <div class="file-name" id="file-name">No file chosen</div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-large" style="width: 100%;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Us on Map</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.24074428116955!2d90.37739434160464!3d23.7526598171196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8adbca4285b%3A0x5b23cc5f89fe18c2!2sDaffodil%20Software%20Limited!5e0!3m2!1sen!2sbd!4v1747483305100!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+   <!-- Job Detail Modals -->
+    <!-- Modal 1 -->
+    <div class="modal" id="job-modal-1">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Senior Software Engineer</h3>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h4>Job Description</h4>
+                <p>We're looking for an experienced Senior Software Engineer to join our core product team. You'll be responsible for designing and implementing scalable solutions for our enterprise clients.</p>
+                
+                <h4>Responsibilities</h4>
+                <ul>
+                    <li>Design, develop, and maintain high-quality software solutions</li>
+                    <li>Collaborate with cross-functional teams to define, design, and ship new features</li>
+                    <li>Optimize applications for maximum speed and scalability</li>
+                    <li>Implement security and data protection measures</li>
+                    <li>Mentor junior developers and conduct code reviews</li>
+                    <li>Stay up-to-date with emerging technologies and industry trends</li>
+                </ul>
+                
+                <h4>Requirements</h4>
+                <ul>
+                    <li>5+ years of professional software development experience</li>
+                    <li>Strong proficiency in JavaScript, Node.js, and React</li>
+                    <li>Experience with MongoDB or other NoSQL databases</li>
+                    <li>Knowledge of RESTful API design and microservices architecture</li>
+                    <li>Experience with cloud platforms (AWS, Azure, or GCP)</li>
+                    <li>Excellent problem-solving skills and attention to detail</li>
+                    <li>Bachelor's degree in Computer Science or related field</li>
+                </ul>
+                
+                <h4>Benefits</h4>
+                <ul>
+                    <li>Competitive salary with performance bonuses</li>
+                    <li>Health insurance and wellness programs</li>
+                    <li>Flexible work hours and remote work options</li>
+                    <li>Professional development budget</li>
+                    <li>Modern office with recreational facilities</li>
+                    <li>Annual company retreat</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close-btn">Close</button>
+                <a href="#apply" class="btn" onclick="setJobPosition('Senior Software Engineer')">Apply Now</a>
+            </div>
+        </div>
+    </div>
+        <!-- Modal 2 -->
+    <div class="modal" id="job-modal-2">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">UI/UX Designer</h3>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h4>Job Description</h4>
+                <p>Join our creative team as a UI/UX Designer to create beautiful, intuitive interfaces for our products. You'll work closely with product managers and developers to deliver exceptional user experiences.</p>
+                
+                <h4>Responsibilities</h4>
+                <ul>
+                    <li>Create user-centered designs by considering market analysis, customer feedback, and usability findings</li>
+                    <li>Design UI elements and tools such as navigation menus, search boxes, tabs, and widgets</li>
+                    <li>Develop UI mockups and prototypes that clearly illustrate how sites function and look</li>
+                    <li>Create original graphic designs (e.g., images, sketches, and tables)</li>
+                    <li>Prepare and present rough drafts to internal teams and key stakeholders</li>
+                    <li>Conduct layout adjustments based on user feedback</li>
+                </ul>
+                
+                <h4>Requirements</h4>
+                <ul>
+                    <li>3+ years of proven work experience as a UI/UX Designer or similar role</li>
+                    <li>Portfolio of design projects</li>
+                    <li>Knowledge of wireframe tools (e.g., Figma, Adobe XD)</li>
+                    <li>Up-to-date knowledge of design software like Adobe Illustrator and Photoshop</li>
+                    <li>Team spirit; strong communication skills to collaborate with various stakeholders</li>
+                    <li>Good time-management skills</li>
+                    <li>BSc in Design, Computer Science, or relevant field</li>
+                </ul>
+                
+                <h4>Benefits</h4>
+                <ul>
+                    <li>Competitive salary with performance bonuses</li>
+                    <li>Health insurance and wellness programs</li>
+                    <li>Flexible work hours and remote work options</li>
+                    <li>Professional development budget</li>
+                    <li>Modern office with recreational facilities</li>
+                    <li>Annual company retreat</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close-btn">Close</button>
+                <a href="#apply" class="btn" onclick="setJobPosition('UI/UX Designer')">Apply Now</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Other modals would follow the same pattern -->
+    <!-- For brevity, I've included only 2 modals in this example -->
+
+    <!-- Application Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Application Submitted</h3>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <div style="font-size: 60px; color: #4CAF50; margin-bottom: 20px;">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Thank You for Applying!</h3>
+                <p>We've received your application for the <strong id="applied-position"></strong> position.</p>
+                <p>Our HR team will review your application and contact you if there's a match with our current needs.</p>
+                <p>In the meantime, feel free to explore more about Daffodil Software on our website.</p>
+            </div>
+            <div class="modal-footer" style="justify-content: center;">
+                <button class="btn btn-secondary modal-close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Fixed side bar for Social Media -->
+    <div class="fixedsocial-icons">
+        <a href="https://www.facebook.com/daffodilsoft" class="social-icon facebook" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://bd.linkedin.com/company/daffodilsoft" class="social-icon linkedin" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com/daffodilsoft" class="social-icon twitter" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UC8T6VFg_Hi4d0vSeQRkZT7Q" class="social-icon youtube" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+    
+    
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Daffodil Software Limited</h3>
+                    <p>Your Trusted Partner in Digital Success</p>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+8801713493026</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>software@daffodil-bd.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Daffodil Tower, 102/1, Shukrabad, Mirpur Road, Dhanmondi, Dhaka-1207</span>
+                    </div>
+                    <div class="footer-certificates">
+                        <img src="https://via.placeholder.com/80x80?text=ISO+9001" alt="ISO 9001 Certified">
+                        <img src="https://via.placeholder.com/80x80?text=Microsoft+Partner" alt="Microsoft Partner">
+                        <img src="https://via.placeholder.com/80x80?text=Odoo+Partner" alt="Odoo Partner">
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">At A Glance</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Career</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="smart-edu.html">Smart Edu</a></li>
+                        <li><a href="smart-hospital.html">Smart Hospital</a></li>
+                        <li><a href="smart-business.html">Smart Business 24</a></li>
+                        <li><a href="iums.html">IUMS</a></li>
+                        <li><a href="1Card.html">1 Card</a></li>
+                        <li><a href="virtual-gate.html">Virtual Gate</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Insights</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">White Papers</a></li>
+                        <li><a href="#">News & Events</a></li>
+                    </ul>
+                    <div class="footer-newsletter">
+                        <h4>Subscribe to Newsletter</h4>
+                        <form>
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit" aria-label="Subscribe to Newsletter"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>A proud concern of Daffodil Family</p>
+                </div>
+                <div class="footer-bottom-center">
+                    <p>© 2025 Daffodil Software Ltd. All Rights Reserved.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <p>Connect with DSL: 
+                        <a href="https://www.facebook.com/daffodilsoft/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/daffodilsoft" title="twitter"> <i class="fab fa-twitter"></i></a>
+                        <a href="https://bd.linkedin.com/company/daffodilsoft" title="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/daffodilsoftwareltd/" title="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UC8T6VFg_Hi4d0vSeQRkZT7Q" title="youtube"><i class="fab fa-youtube"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-times');
+                this.querySelector('i').classList.toggle('fa-bars');
+            });
+
+            // Handle dropdown menus on mobile
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Back to Top Button
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+            
+            backToTop.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            
+
+            // Job Filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const jobCards = document.querySelectorAll('.job-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    jobCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+                        // Job Detail Modals
+            const viewDetailButtons = document.querySelectorAll('.view-details');
+            const modals = document.querySelectorAll('.modal');
+            const closeButtons = document.querySelectorAll('.modal-close, .modal-close-btn');
+            
+            viewDetailButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const jobId = button.getAttribute('data-job');
+                    const modal = document.getElementById(`job-modal-${jobId}`);
+                    modal.classList.add('show');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            closeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    modals.forEach(modal => {
+                        modal.classList.remove('show');
+                    });
+                    document.body.style.overflow = 'auto';
+                });
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', (e) => {
+                if (e.target.classList.contains('modal')) {
+                    e.target.classList.remove('show');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // File Upload Display
+            const fileUpload = document.getElementById('cv-upload');
+            const fileNameDisplay = document.getElementById('file-name');
+            
+            fileUpload.addEventListener('change', () => {
+                if (fileUpload.files.length > 0) {
+                    fileNameDisplay.textContent = fileUpload.files[0].name;
+                } else {
+                    fileNameDisplay.textContent = 'No file chosen';
+                }
+            });
+
+            
+
+         // Application Form Submission
+            const careerForm = document.getElementById('career-form');
+            
+            careerForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // In a real implementation, you would send the form data to your server here
+                // For this example, we'll just show a success message
+                
+                const position = document.getElementById }); 
