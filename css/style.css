@@ -463,107 +463,107 @@
 }
   /* Clients Section */
   /* Clients Section */
-        .clients-section {
-            padding: 80px 0;
-            background: var(--light-color);
-            position: relative;
-        }
+    .clients-section {
+        padding: 80px 0;
+        /* background: var(--light-color); */
+        position: relative;
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 50px;
-            position: relative;
-        }
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        margin-bottom: 50px;
+        position: relative;
+    }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        border-radius: 2px;
+    }
+
+    .client-logos-container {
+        position: relative;
+        overflow: hidden;
+        padding: 0 0 40px 0; /* Increased top padding for tooltips */
+        margin: 0 -20px;
+    }
+
+    .client-logos-track {
+        display: flex;
+        gap: 30px;
+        width: max-content;
+    }
+
+    .client-logo-item {
+        position: relative;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 180px;
+        height: 120px;
+        padding: 20px;
+        background: var(--white);
+        border-radius: 12px;
+        cursor: pointer;
+        overflow: visible;
+        transition: all .4s;
+    }
+
+    .client-logo-item:hover img {
+      transition: all .3s;
+        transform: scale(1.2);
+    }
+
+    .client-logo {
+        max-height: 80px;
+        max-width: 140px;
+        object-fit: contain;
+    }
+
+
+    /* Gradient overlays for smooth edges */
+    
+    /* Pause animation on hover */
+    .client-logos-container:hover .client-logos-track {
+        animation-play-state: paused;
+    }
+
+    /* Animation keyframes */
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            border-radius: 2px;
         }
+    }
 
-        .client-logos-container {
-            position: relative;
-            overflow: hidden;
-            padding: 0 0 40px 0; /* Increased top padding for tooltips */
-            margin: 0 -20px;
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 2rem;
         }
-
-        .client-logos-track {
-            display: flex;
-            gap: 30px;
-            width: max-content;
-        }
-
+        
         .client-logo-item {
-            position: relative;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 180px;
-            height: 120px;
-            padding: 20px;
-            background: var(--white);
-            border-radius: 12px;
-            cursor: pointer;
-            overflow: visible;
-            transition: all .4s;
+            width: 150px;
+            height: 100px;
         }
+      
+    }
 
-        .client-logo-item:hover img {
-          transition: all .3s;
-            transform: scale(1.2);
-        }
-
-        .client-logo {
-            max-height: 80px;
-            max-width: 140px;
-            object-fit: contain;
-        }
-
-
-        /* Gradient overlays for smooth edges */
-       
-        /* Pause animation on hover */
-        .client-logos-container:hover .client-logos-track {
-            animation-play-state: paused;
-        }
-
-        /* Animation keyframes */
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .client-logo-item {
-                width: 150px;
-                height: 100px;
-            }
-          
-        }
-  
   /* Products Section */
   .products-section {
-    padding: 80px 0;
+    padding-bottom: 80px;
   }
   
   .products-grid {
@@ -574,9 +574,10 @@
   
   .product-card {
     background: var(--white);
+    border: 1px solid #e7e7e7eb;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    /* box-shadow: var(--shadow); */
     transition: var(--transition);
   }
   
@@ -586,7 +587,7 @@
   }
   
   .product-img {
-    height: 200px;
+    height: 130px;
     overflow: hidden;
   }
   
@@ -615,6 +616,25 @@
     margin-bottom: 20px;
     color: var(--text-light);
   }
+  .product-btn {
+    display: inline-block;
+    background: transparent;
+    color:var(--primary-color);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    transition: var(--transition);
+    border: 2px solid var(--primary-color);
+  }
+  
+  .product-btn:hover {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+  }
   
   /* Services Section */
   .services-section {
@@ -633,13 +653,13 @@
     padding: 40px 30px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: var(--shadow);
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
   }
   
   .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   }
   
   .service-icon {
