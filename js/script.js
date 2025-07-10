@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() { 
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
@@ -560,3 +560,22 @@ document.addEventListener('DOMContentLoaded', initTestimonialSlider);
     });
   });
 })();
+
+// Why Choose Us Accordion (on click, not hover)
+document.addEventListener('DOMContentLoaded', function() {
+  // Why Choose Us Accordion
+  const featureBoxes = document.querySelectorAll('.why-choose-us .feature-box');
+  featureBoxes.forEach(box => {
+    const title = box.querySelector('.feature-title');
+    if (title) {
+      title.addEventListener('click', function() {
+        // Close all other boxes
+        featureBoxes.forEach(b => {
+          if (b !== box) b.classList.remove('open');
+        });
+        // Toggle current box
+        box.classList.toggle('open');
+      });
+    }
+  });
+});
