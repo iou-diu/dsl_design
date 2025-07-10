@@ -4,7 +4,7 @@
     --secondary-color: #ff6600;
     --dark-color: #333;
     --light-color: #f8f9fa;
-    --text-color: #444;
+    --text-color: #444; 
     --text-light: #777;
     --white: #fff;
     --black: #000;
@@ -493,7 +493,7 @@
         .client-logos-container {
             position: relative;
             overflow: hidden;
-            padding: 80px 0 40px 0; /* Increased top padding for tooltips */
+            padding: 0 0 40px 0; /* Increased top padding for tooltips */
             margin: 0 -20px;
         }
 
@@ -501,7 +501,6 @@
             display: flex;
             gap: 30px;
             width: max-content;
-            will-change: transform;
         }
 
         .client-logo-item {
@@ -515,102 +514,25 @@
             padding: 20px;
             background: var(--white);
             border-radius: 12px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
             cursor: pointer;
             overflow: visible;
+            transition: all .4s;
         }
 
-        .client-logo-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.15);
+        .client-logo-item:hover img {
+          transition: all .3s;
+            transform: scale(1.2);
         }
 
         .client-logo {
             max-height: 80px;
             max-width: 140px;
             object-fit: contain;
-            filter: grayscale(100%) opacity(0.7);
-            transition: var(--transition);
         }
 
-        .client-logo-item:hover .client-logo {
-            filter: grayscale(0) opacity(1);
-            transform: scale(1.05);
-        }
-
-        .client-tooltip {
-            position: absolute;
-            bottom: calc(100% + 15px);
-            left: 50%;
-            transform: translateX(-50%) translateY(10px);
-            background: var(--dark-color);
-            color: var(--white);
-            padding: 16px;
-            border-radius: 8px;
-            width: 280px;
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: var(--transition);
-            z-index: 1000;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            white-space: nowrap;
-            overflow: visible;
-        }
-
-        .client-tooltip::before {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 8px solid transparent;
-            border-top-color: var(--dark-color);
-        }
-
-        .client-logo-item:hover .client-tooltip {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .client-tooltip h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--secondary-color);
-        }
-
-        .client-tooltip p {
-            font-size: 14px;
-            line-height: 1.4;
-            color: #cbd5e1;
-            white-space: normal;
-        }
 
         /* Gradient overlays for smooth edges */
-        .client-logos-container::before,
-        .client-logos-container::after {
-            content: '';
-            position: absolute;
-            top: 80px; /* Adjust to start after tooltip space */
-            bottom: 0;
-            width: 100px;
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        .client-logos-container::before {
-            left: 0;
-            background: linear-gradient(90deg, var(--light-color), transparent);
-        }
-
-        .client-logos-container::after {
-            right: 0;
-            background: linear-gradient(270deg, var(--light-color), transparent);
-        }
-
+       
         /* Pause animation on hover */
         .client-logos-container:hover .client-logos-track {
             animation-play-state: paused;
@@ -636,10 +558,7 @@
                 width: 150px;
                 height: 100px;
             }
-            
-            .client-tooltip {
-                width: 250px;
-            }
+          
         }
   
   /* Products Section */
