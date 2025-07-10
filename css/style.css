@@ -163,7 +163,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 15px 15px;
   }
   
 .logo {
@@ -242,8 +242,12 @@
   
   .mobile-menu-btn {
     display: none;
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
+    margin-left: 20px;
+    z-index: 1100;
+    background: none;
+    border: none;
   }
   
  /* Hero Slider Styles */
@@ -1251,16 +1255,16 @@
     
     .nav-links {
       position: fixed;
-      top: 80px;
+      top: 70px;
       left: -100%;
       width: 100%;
-      height: calc(100vh - 80px);
+      height: calc(100vh - 70px);
       background: var(--white);
       flex-direction: column;
       align-items: center;
       padding: 40px 0;
-      transition: var(--transition);
-      z-index: 999;
+      transition: left 0.3s cubic-bezier(0.4,0,0.2,1);
+      z-index: 1001;
     }
     
     .nav-links.active {
@@ -1280,10 +1284,6 @@
       display: none;
       padding: 0;
       margin-top: 10px;
-    }
-    
-    .dropdown:hover .dropdown-menu {
-      transform: none;
     }
     
     .dropdown.active .dropdown-menu {
@@ -1582,11 +1582,15 @@ img {
 }
 
 .mobile-menu-btn {
-  display: none;
-  font-size: 24px;
+  /* display: none; */
+  font-size: 28px;
   cursor: pointer;
+  margin-left: 20px;
+  z-index: 1100;
+  background: none;
+  border: none;
 }
-
+  
 /* CTA Section */
 .cta-section {
   padding: 100px 0;
