@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Software Development | Daffodil Software Ltd</title>
-    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         /* Base Styles from Theme */
         :root {
@@ -527,7 +527,7 @@
         }
 
         .service-content {
-            max-height: 0;
+            /* max-height: 0; */
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
@@ -1728,50 +1728,7 @@
                 });
             });
 
-            // Service Cards Accordion
-            const serviceCards = document.querySelectorAll('.service-card');
             
-            serviceCards.forEach(card => {
-                const header = card.querySelector('.service-header');
-                
-                header.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        // Close all other cards
-                        serviceCards.forEach(otherCard => {
-                            if (otherCard !== card && otherCard.classList.contains('active')) {
-                                otherCard.classList.remove('active');
-                            }
-                        });
-                        
-                        // Toggle current card
-                        card.classList.toggle('active');
-                    }
-                });
-
-                // Hover functionality for desktop
-                if (window.innerWidth > 768) {
-                    card.addEventListener('mouseenter', function() {
-                        // Close all other cards
-                        serviceCards.forEach(otherCard => {
-                            if (otherCard !== card && otherCard.classList.contains('active')) {
-                                otherCard.classList.remove('active');
-                            }
-                        });
-                        
-                        // Open current card
-                        card.classList.add('active');
-                    });
-
-                    // Keep card open when hovering over content
-                    card.addEventListener('mouseleave', function(e) {
-                        // Check if mouse is leaving the card entirely
-                        if (!card.contains(e.relatedTarget)) {
-                            card.classList.remove('active');
-                        }
-                    });
-                }
-            });
-
             // Back to Top Button
             const backToTop = document.querySelector('.back-to-top');
             
@@ -1791,69 +1748,9 @@
                 });
             });
 
-            // Form Submission
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Thank you for your inquiry. We will contact you shortly!');
-                    contactForm.reset();
-                });
-            }
-
-            // Update service card behavior on window resize
-            window.addEventListener('resize', function() {
-                serviceCards.forEach(card => {
-                    if (window.innerWidth > 768) {
-                        // Remove click event and add hover for desktop
-                        card.querySelector('.service-header').removeEventListener('click', handleServiceClick);
-                        card.addEventListener('mouseenter', handleServiceHover);
-                        card.addEventListener('mouseleave', handleServiceLeave);
-                    } else {
-                        // Remove hover events and add click for mobile
-                        card.removeEventListener('mouseenter', handleServiceHover);
-                        card.removeEventListener('mouseleave', handleServiceLeave);
-                        card.querySelector('.service-header').addEventListener('click', handleServiceClick);
-                    }
-                });
-            });
-
-            function handleServiceClick() {
-                const card = this.closest('.service-card');
-                // Close all other cards
-                serviceCards.forEach(otherCard => {
-                    if (otherCard !== card && otherCard.classList.contains('active')) {
-                        otherCard.classList.remove('active');
-                    }
-                });
-                
-                // Toggle current card
-                card.classList.toggle('active');
-            }
-
-            function handleServiceHover() {
-                const card = this;
-                // Close all other cards
-                serviceCards.forEach(otherCard => {
-                    if (otherCard !== card && otherCard.classList.contains('active')) {
-                        otherCard.classList.remove('active');
-                    }
-                });
-                
-                // Open current card
-                card.classList.add('active');
-            }
-
-            function handleServiceLeave(e) {
-                const card = this;
-                // Check if mouse is leaving the card entirely
-                if (!card.contains(e.relatedTarget)) {
-                    card.classList.remove('active');
-                }
-            }
+            
         });
     </script>
 </body>
 
-<!-- Mirrored from daffodilsoft.netlify.app/services/odoo-erp-customization by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jun 2025 20:06:10 GMT -->
 </html>
