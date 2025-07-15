@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Gate - Next-Generation Virtual Event Management Platform | Daffodil Software Ltd</title>
-    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         /* Base Styles */
         :root {
@@ -86,7 +86,7 @@
 
         .btn:hover {
             background: transparent;
-            color: var(#004080);
+            color: var(--primary-color);
             transform: translateY(-3px);
             box-shadow: var(--shadow);
         }
@@ -175,8 +175,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 15px 15px;
         }
+        .mobile-menu-btn {
+    z-index: 22222;
+}
 
         .logo {
             display: inline-block;
@@ -271,7 +274,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1712904116052-83027d283496?q=80&amp;w=1931&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
             opacity: 0.1;
             z-index: 0;
         }
@@ -467,96 +470,83 @@
         }
 
         /* Core Modules Section */
-        /* Core Modules Section */
-    .core-modules {
-        padding: 80px 0;
-        background: #f8f9fa;
-    }
-
-    .modules-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
-    .module-card {
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-        border: 1px solid #e9ecef;
-    }
-
-    .module-header {
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        background: transparent;
-        color: #333;
-    }
-
-    .module-header h3 {
-        margin: 0;
-        font-size: 18px;
-        font-weight: 600;
-    }
-
-    .module-header i {
-        transition: transform 0.3s ease;
-        color: #777;
-    }
-
-    .module-card.active .module-header i {
-        transform: rotate(180deg);
-    }
-
-    .module-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-
-    .module-card.active .module-content {
-        max-height: 500px;
-    }
-
-    .module-content ul {
-        padding: 0 20px 20px;
-        margin: 0;
-    }
-
-    .module-content li {
-        padding: 8px 0;
-        font-size: 14px;
-        color: #555;
-        border-bottom: 1px solid #f0f0f0;
-        position: relative;
-    }
-
-    .module-content li:last-child {
-        border-bottom: none;
-    }
-
-    .module-content li:hover::before {
-        content: "→";
-        position: absolute;
-        left: -15px;
-        color: #0066cc;
-    }
-
-    /* Hover effects for desktop */
-    @media (min-width: 769px) {
-        .module-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .core-modules {
+            padding: 80px 0;
+            background: #f8f9fa;
         }
 
-        .module-card:hover .module-header {
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .module-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e9ecef;
+            transition: all .5s;
+        }
+
+        .module-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            color: #333;
+        }
+
+        .module-header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .module-header i {
+            color: #777;
+        }
+
+        .module-content {
+            padding: 0 20px 20px;
+        }
+
+        .module-content ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .module-content li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+        }
+
+        .module-content li:last-child {
+            border-bottom: none;
+        }
+
+        .module-content li:hover::before {
+            content: "→";
+            position: absolute;
+            left: -15px;
             color: #0066cc;
         }
-    }
+
+        /* Hover effects for desktop */
+        @media (min-width: 769px) {
+            .module-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .module-card:hover .module-header {
+                color: #0066cc;
+            }
+        }
 
         /* Key Advantages Section */
         .key-advantages {
@@ -804,34 +794,6 @@
         .form-group textarea {
             min-height: 100px;
             resize: vertical;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            text-align: center;
-        }
-
-        .cta-title {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
-
-        .cta-description {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            font-size: 18px;
-        }
-
-        .cta-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
         }
 
         /* Footer */
@@ -1095,7 +1057,6 @@
         }
 
         /* Fixed side bar for Social Media */
-        /* social media side bar */
         .fixedsocial-icons {
             position: fixed;
             right: 20px;
@@ -1190,7 +1151,7 @@
             background: var(--secondary-color);
             transform: translateY(-5px);
         }
-        
+
         /* Custom Cursor */
         .cursor {
             position: fixed;
@@ -1204,7 +1165,7 @@
             transform: translate(-50%, -50%);
             transition: transform 0.1s ease;
         }
-        
+
         .cursor-follower {
             position: fixed;
             width: 40px;
@@ -1216,37 +1177,37 @@
             transform: translate(-50%, -50%);
             transition: all 0.3s ease-out, background 0.1s ease, border 0.1s ease;
         }
-        
+
         .cursor.hover,
         .cursor-follower.hover {
             transform: translate(-50%, -50%) scale(1.5);
             background: var(--secondary-color);
             border-color: var(--secondary-color);
         }
-        
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .product-hero .hero-content {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .product-hero .hero-btns {
                 justify-content: center;
             }
-            
+
             .product-intro .intro-content {
                 flex-direction: column;
             }
-            
+
             .contact-cta .cta-content {
                 flex-direction: column;
             }
-            
+
             .contact-cta .cta-form {
                 max-width: 100%;
             }
-            
+
             .section-title {
                 font-size: 32px;
             }
@@ -1256,7 +1217,7 @@
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             .nav-links {
                 position: fixed;
                 top: 80px;
@@ -1270,15 +1231,15 @@
                 transition: var(--transition);
                 z-index: 999;
             }
-            
+
             .nav-links.active {
                 left: 0;
             }
-            
+
             .nav-links li {
                 margin: 15px 0;
             }
-            
+
             .dropdown-menu {
                 position: static;
                 width: 100%;
@@ -1289,41 +1250,33 @@
                 padding: 0;
                 margin-top: 10px;
             }
-            
-            .dropdown:hover .dropdown-menu {
-                transform: none;
-            }
-            
+
             .dropdown.active .dropdown-menu {
                 display: block;
             }
-            
+
             .product-hero h1 {
                 font-size: 36px;
             }
-            
+
             .product-hero h2 {
                 font-size: 20px;
             }
-            
+
             .product-hero .hero-btns {
                 flex-direction: column;
             }
-            
-            .cta-title {
-                font-size: 32px;
-            }
-            
+
             .footer-bottom {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-            
+
             .cta-stats {
                 flex-direction: column;
                 gap: 20px;
             }
-            
+
             .stat-item {
                 text-align: left;
             }
@@ -1334,39 +1287,32 @@
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .product-hero {
                 padding: 80px 0 60px;
             }
-            
+
             .product-hero h1 {
                 font-size: 30px;
             }
-            
+
             .product-intro .intro-text h2 {
                 font-size: 26px;
             }
-            
+
             .contact-cta .cta-text h2 {
                 font-size: 28px;
             }
-            
-            .cta-btns {
-                flex-direction: column;
-            }
-            
-            .cta-btns .btn {
-                width: 100%;
-            }
-            
+
             .modal-content {
                 padding: 20px;
             }
-            
+
             .brochure-viewer {
                 height: 300px;
             }
         }
+
         /* Hide social media buttons on mobile devices */
         @media (max-width: 768px) {
             .fixedsocial-icons {
@@ -1386,9 +1332,8 @@
                 font-size: 1.2rem;
             }
         }
-        
     </style>
-</head>
+</head> 
 <body>
     <!-- Top Bar -->
     <div class="top-bar">
@@ -2060,61 +2005,15 @@
                 });
             });
 
-            // Module Cards Accordion with hover effect
-            const moduleCards = document.querySelectorAll('.module-card');
-            
-            moduleCards.forEach(card => {
-                const header = card.querySelector('.module-header');
-                
-                // Click functionality for mobile
-                header.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        // Close all other cards
-                        moduleCards.forEach(otherCard => {
-                            if (otherCard !== card && otherCard.classList.contains('active')) {
-                                otherCard.classList.remove('active');
-                            }
-                        });
-                        
-                        // Toggle current card
-                        card.classList.toggle('active');
-                    }
-                });
-
-                // Hover functionality for desktop
-                if (window.innerWidth > 768) {
-                    card.addEventListener('mouseenter', function() {
-                        // Close all other cards
-                        moduleCards.forEach(otherCard => {
-                            if (otherCard !== card && otherCard.classList.contains('active')) {
-                                otherCard.classList.remove('active');
-                            }
-                        });
-                        
-                        // Open current card
-                        card.classList.add('active');
-                    });
-
-                    // Keep card open when hovering over content
-                    card.addEventListener('mouseleave', function(e) {
-                        // Check if mouse is leaving the card entirely
-                        if (!card.contains(e.relatedTarget)) {
-                            card.classList.remove('active');
-                        }
-                    });
-                }
-            });
-
             // Client Logos Auto-Scrolling
             const clientTrack = document.querySelector('.client-logos-track');
             let clientPosition = 0;
-            const clientScrollSpeed = 1;
+            const clientScrollSpeed = 0.5; // Adjust speed as needed
             let clientAnimationId;
 
             function animateClients() {
                 clientPosition -= clientScrollSpeed;
                 
-                // Reset position when scrolled all items
                 if (clientPosition < -clientTrack.scrollWidth / 2) {
                     clientPosition = 0;
                 }
@@ -2192,9 +2091,6 @@
                     e.preventDefault();
                     demoModal.style.display = 'none';
                     thankYouModal.style.display = 'block';
-                    
-                    // Here you would typically send the form data to your server
-                    // For demo purposes, we're just showing the thank you modal
                 });
             }
 
@@ -2202,11 +2098,7 @@
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    
-                    // Show thank you message (could be enhanced with actual form submission)
-                    alert('Thank you for reaching out. Our team will contact you shortly. For urgent support, call us at +8801713493026. We appreciate your interest in Smart Edu!');
-                    
-                    // Reset form
+                    alert('Thank you for reaching out. Our team will contact you shortly. For urgent support, call us at +8801713493026. We appreciate your interest in Smart Hospital!');
                     contactForm.reset();
                 });
             }
@@ -2217,17 +2109,22 @@
                 shareBtn.addEventListener('click', function() {
                     if (navigator.share) {
                         navigator.share({
-                            title: 'Smart Edu Brochure',
-                            text: 'Check out the Smart Edu brochure from Daffodil Software Ltd',
-                            url: 'https://example.com/smart-edu-brochure.pdf',
+                            title: 'Smart Hospital Brochure',
+                            text: 'Check out the Smart Hospital brochure from Daffodil Software Ltd',
+                            url: '/brochure/smart-hospital-brochure.pdf',
                         })
                         .catch(err => {
                             console.log('Error sharing:', err);
                             alert('Sharing failed. Please try again or copy the link manually.');
                         });
                     } else {
-                        // Fallback for browsers that don't support Web Share API
-                        alert('Web Share API not supported in your browser. Please copy the link manually.');
+                        const tempInput = document.createElement('input');
+                        tempInput.value = '/brochure/smart-hospital-brochure.pdf';
+                        document.body.appendChild(tempInput);
+                        tempInput.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tempInput);
+                        alert('Link copied to clipboard: /brochure/smart-hospital-brochure.pdf');
                     }
                 });
             }
@@ -2243,99 +2140,48 @@
                     animateClients();
                 }
             });
-
-            // Update module card behavior on window resize
-            window.addEventListener('resize', function() {
-                moduleCards.forEach(card => {
-                    if (window.innerWidth > 768) {
-                        // Remove click event and add hover for desktop
-                        card.querySelector('.module-header').removeEventListener('click', handleModuleClick);
-                        card.addEventListener('mouseenter', handleModuleHover);
-                        card.addEventListener('mouseleave', handleModuleLeave);
-                    } else {
-                        // Remove hover events and add click for mobile
-                        card.removeEventListener('mouseenter', handleModuleHover);
-                        card.removeEventListener('mouseleave', handleModuleLeave);
-                        card.querySelector('.module-header').addEventListener('click', handleModuleClick);
-                    }
-                });
-            });
-
-            function handleModuleClick() {
-                const card = this.closest('.module-card');
-                // Close all other cards
-                moduleCards.forEach(otherCard => {
-                    if (otherCard !== card && otherCard.classList.contains('active')) {
-                        otherCard.classList.remove('active');
-                    }
-                });
-                
-                // Toggle current card
-                card.classList.toggle('active');
-            }
-
-            function handleModuleHover() {
-                const card = this;
-                // Close all other cards
-                moduleCards.forEach(otherCard => {
-                    if (otherCard !== card && otherCard.classList.contains('active')) {
-                        otherCard.classList.remove('active');
-                    }
-                });
-                
-                // Open current card
-                card.classList.add('active');
-            }
-
-            function handleModuleLeave(e) {
-                const card = this;
-                // Check if mouse is leaving the card entirely
-                if (!card.contains(e.relatedTarget)) {
-                    card.classList.remove('active');
-                }
-            }
         });
 
-         // Back to Top Button
-    const backToTop = document.querySelector('.back-to-top');
-  
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTop.classList.add('show');
-      } else {
-        backToTop.classList.remove('show');
-      }
-    });
-  
-    backToTop.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  
-    // Scroll Animations
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.animate__animated');
-      const windowHeight = window.innerHeight;
-      const triggerPoint = windowHeight / 1.3;
-  
-      elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
+        // Back to Top Button
+        const backToTop = document.querySelector('.back-to-top');
         
-        if (elementPosition < triggerPoint) {
-          const animation = element.classList.contains('animate__fadeInUp') ? 'fadeInUp' :
-                           element.classList.contains('animate__fadeInDown') ? 'fadeInDown' :
-                           element.classList.contains('animate__fadeInLeft') ? 'fadeInLeft' :
-                           element.classList.contains('animate__fadeInRight') ? 'fadeInRight' : 'fadeIn';
-          
-          element.classList.add(`animate__${animation}`);
-        }
-      });
-    };
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Scroll Animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate__animated');
+            const windowHeight = window.innerHeight;
+            const triggerPoint = windowHeight / 1.3;
+        
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                
+                if (elementPosition < triggerPoint) {
+                    const animation = element.classList.contains('animate__fadeInUp') ? 'fadeInUp' :
+                                    element.classList.contains('animate__fadeInDown') ? 'fadeInDown' :
+                                    element.classList.contains('animate__fadeInLeft') ? 'fadeInLeft' :
+                                    element.classList.contains('animate__fadeInRight') ? 'fadeInRight' : 'fadeIn';
+                    
+                    element.classList.add(`animate__${animation}`);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
-
-<!-- Mirrored from daffodilsoft.netlify.app/products/virtual-gate by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jun 2025 20:06:01 GMT -->
 </html>

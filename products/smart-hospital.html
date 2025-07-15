@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from daffodilsoft.netlify.app/products/smart-hospital by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jun 2025 20:05:42 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Hospital - Revolutionize your healthcare facility with our integrated digital solution</title>
-    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         /* Base Styles */
         :root {
@@ -86,7 +84,7 @@
 
         .btn:hover {
             background: transparent;
-            color: var(#004080);
+            color: var(--primary-color);
             transform: translateY(-3px);
             box-shadow: var(--shadow);
         }
@@ -175,8 +173,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 15px 15px;
         }
+        .mobile-menu-btn {
+    z-index: 22222;
+}
 
         .logo {
             display: inline-block;
@@ -271,7 +272,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1599045118108-bf9954418b76?q=80&amp;w=1974&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
             opacity: 0.1;
             z-index: 0;
         }
@@ -467,96 +468,83 @@
         }
 
         /* Core Modules Section */
-        /* Core Modules Section */
-    .core-modules {
-        padding: 80px 0;
-        background: #f8f9fa;
-    }
-
-    .modules-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
-    .module-card {
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-        border: 1px solid #e9ecef;
-    }
-
-    .module-header {
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        background: transparent;
-        color: #333;
-    }
-
-    .module-header h3 {
-        margin: 0;
-        font-size: 18px;
-        font-weight: 600;
-    }
-
-    .module-header i {
-        transition: transform 0.3s ease;
-        color: #777;
-    }
-
-    .module-card.active .module-header i {
-        transform: rotate(180deg);
-    }
-
-    .module-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-
-    .module-card.active .module-content {
-        max-height: 500px;
-    }
-
-    .module-content ul {
-        padding: 0 20px 20px;
-        margin: 0;
-    }
-
-    .module-content li {
-        padding: 8px 0;
-        font-size: 14px;
-        color: #555;
-        border-bottom: 1px solid #f0f0f0;
-        position: relative;
-    }
-
-    .module-content li:last-child {
-        border-bottom: none;
-    }
-
-    .module-content li:hover::before {
-        content: "→";
-        position: absolute;
-        left: -15px;
-        color: #0066cc;
-    }
-
-    /* Hover effects for desktop */
-    @media (min-width: 769px) {
-        .module-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .core-modules {
+            padding: 80px 0;
+            background: #f8f9fa;
         }
 
-        .module-card:hover .module-header {
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .module-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e9ecef;
+            transition: all .5s;
+        }
+
+        .module-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            color: #333;
+        }
+
+        .module-header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .module-header i {
+            color: #777;
+        }
+
+        .module-content {
+            padding: 0 20px 20px;
+        }
+
+        .module-content ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .module-content li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+        }
+
+        .module-content li:last-child {
+            border-bottom: none;
+        }
+
+        .module-content li:hover::before {
+            content: "→";
+            position: absolute;
+            left: -15px;
             color: #0066cc;
         }
-    }
+
+        /* Hover effects for desktop */
+        @media (min-width: 769px) {
+            .module-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .module-card:hover .module-header {
+                color: #0066cc;
+            }
+        }
 
         /* Key Advantages Section */
         .key-advantages {
@@ -627,8 +615,6 @@
             overflow: hidden;
             position: relative;
             padding: 20px 0;
-            overflow: hidden;
-
         }
 
         .client-logos-track {
@@ -636,7 +622,6 @@
             gap: 40px;
             width: max-content;
             will-change: transform;
-            animation: scrollLogos auto linear infinite;
         }
 
         .client-logo-item {
@@ -650,7 +635,6 @@
             border-radius: 8px;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            
         }
 
         .client-logo-item:hover {
@@ -658,12 +642,10 @@
         }
 
         .client-logo {
-            height: 100px;
-            width: 100px;
-            max-width: 150px;
+            height: 60px;
             object-fit: contain;
-            filter: grayscale(0%);
-            opacity: 100%;
+            filter: grayscale(100%);
+            opacity: 0.7;
             transition: var(--transition);
         }
 
@@ -714,15 +696,6 @@
         .client-tooltip p {
             font-size: 14px;
             color: var(--gray);
-        }
-
-        @keyframes scrollLogos {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
         }
 
         /* Contact CTA Section */
@@ -819,34 +792,6 @@
         .form-group textarea {
             min-height: 100px;
             resize: vertical;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            text-align: center;
-        }
-
-        .cta-title {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
-
-        .cta-description {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            font-size: 18px;
-        }
-
-        .cta-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
         }
 
         /* Footer */
@@ -1109,9 +1054,7 @@
             margin-top: 20px;
         }
 
-
         /* Fixed side bar for Social Media */
-        /* social media side bar */
         .fixedsocial-icons {
             position: fixed;
             right: 20px;
@@ -1206,7 +1149,7 @@
             background: var(--secondary-color);
             transform: translateY(-5px);
         }
-        
+
         /* Custom Cursor */
         .cursor {
             position: fixed;
@@ -1220,7 +1163,7 @@
             transform: translate(-50%, -50%);
             transition: transform 0.1s ease;
         }
-        
+
         .cursor-follower {
             position: fixed;
             width: 40px;
@@ -1232,36 +1175,37 @@
             transform: translate(-50%, -50%);
             transition: all 0.3s ease-out, background 0.1s ease, border 0.1s ease;
         }
-        
+
         .cursor.hover,
         .cursor-follower.hover {
             transform: translate(-50%, -50%) scale(1.5);
             background: var(--secondary-color);
             border-color: var(--secondary-color);
         }
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .product-hero .hero-content {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .product-hero .hero-btns {
                 justify-content: center;
             }
-            
+
             .product-intro .intro-content {
                 flex-direction: column;
             }
-            
+
             .contact-cta .cta-content {
                 flex-direction: column;
             }
-            
+
             .contact-cta .cta-form {
                 max-width: 100%;
             }
-            
+
             .section-title {
                 font-size: 32px;
             }
@@ -1271,7 +1215,7 @@
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             .nav-links {
                 position: fixed;
                 top: 80px;
@@ -1285,15 +1229,15 @@
                 transition: var(--transition);
                 z-index: 999;
             }
-            
+
             .nav-links.active {
                 left: 0;
             }
-            
+
             .nav-links li {
                 margin: 15px 0;
             }
-            
+
             .dropdown-menu {
                 position: static;
                 width: 100%;
@@ -1304,41 +1248,33 @@
                 padding: 0;
                 margin-top: 10px;
             }
-            
-            .dropdown:hover .dropdown-menu {
-                transform: none;
-            }
-            
+
             .dropdown.active .dropdown-menu {
                 display: block;
             }
-            
+
             .product-hero h1 {
                 font-size: 36px;
             }
-            
+
             .product-hero h2 {
                 font-size: 20px;
             }
-            
+
             .product-hero .hero-btns {
                 flex-direction: column;
             }
-            
-            .cta-title {
-                font-size: 32px;
-            }
-            
+
             .footer-bottom {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-            
+
             .cta-stats {
                 flex-direction: column;
                 gap: 20px;
             }
-            
+
             .stat-item {
                 text-align: left;
             }
@@ -1349,39 +1285,32 @@
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .product-hero {
                 padding: 80px 0 60px;
             }
-            
+
             .product-hero h1 {
                 font-size: 30px;
             }
-            
+
             .product-intro .intro-text h2 {
                 font-size: 26px;
             }
-            
+
             .contact-cta .cta-text h2 {
                 font-size: 28px;
             }
-            
-            .cta-btns {
-                flex-direction: column;
-            }
-            
-            .cta-btns .btn {
-                width: 100%;
-            }
-            
+
             .modal-content {
                 padding: 20px;
             }
-            
+
             .brochure-viewer {
                 height: 300px;
             }
         }
+
         /* Hide social media buttons on mobile devices */
         @media (max-width: 768px) {
             .fixedsocial-icons {
@@ -1401,7 +1330,6 @@
                 font-size: 1.2rem;
             }
         }
-        
     </style>
 </head>
 <body>
@@ -1413,21 +1341,22 @@
                 <span>Hot Line: +8801713493026</span>
             </div>
            <div class="social-icons">
-                <a href="https://www.facebook.com/daffodilsoft"title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/daffodilsoft"title="twitter"> <i class="fab fa-twitter"></i></a>
-                <a href="https://bd.linkedin.com/company/daffodilsoft"title="linkedin"> <i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/daffodilsoftwareltd"title="instagram"> <i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UC8T6VFg_Hi4d0vSeQRkZT7Q"title="youtube"> <i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/daffodilsoft" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/daffodilsoft" title="Twitter"> <i class="fab fa-twitter"></i></a>
+                <a href="https://bd.linkedin.com/company/daffodilsoft" title="LinkedIn"> <i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/daffodilsoftwareltd" title="Instagram"> <i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC8T6VFg_Hi4d0vSeQRkZT7Q" title="YouTube"> <i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
     
     <!-- Main Navigation -->
-      <nav class="main-nav">
+    <nav class="main-nav">
         <div class="container nav-container">
             <a class='logo' href='../index.html'>
                 <img src="../images/logo.png" alt="DSL Logo" class="logo-img">
-              </a>            <ul class="nav-links">
+            </a>
+            <ul class="nav-links">
                 <li><a href='../index.html'>Home</a></li>
                 <li class="dropdown">
                     <a href="#">Products <i class="fas fa-chevron-down"></i></a>
@@ -1460,7 +1389,6 @@
                     </ul>   
                 </li>
                 <li><a href='../portfolio.html'>Portfolio</a></li>
-
                 <li><a href='../contact-us.html'>Contact Us</a></li>
             </ul>
             <div class="mobile-menu-btn">
@@ -1486,7 +1414,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="../images/hospital.png" alt="Smart Edu Dashboard">
+                    <img src="../images/hospital.png" alt="Smart Hospital Dashboard">
                 </div>
             </div>
         </div>
@@ -1497,281 +1425,236 @@
         <div class="container">
             <div class="intro-content">
                 <div class="intro-text">
-                    <h2>Empowering Healthcare with Smart Hospital
-</h2>
+                    <h2>Empowering Healthcare with Smart Hospital</h2>
                     <p>Empowering Healthcare with Smart Hospital. Welcome to Smart Hospital – a next-generation platform designed to streamline clinical, administrative, and operational functions of modern healthcare institutions.</p>
                     <p>Smart Hospital brings every department under one unified digital ecosystem—from patient registration, appointments, and billing to EMR, pharmacy, and lab management. Built for hospitals, clinics, and diagnostics centers, it ensures efficiency, transparency, and seamless communication.</p>
                     <p>Elevate patient care, empower medical professionals, and optimize hospital operations through intelligent automation and real-time insights.</p>
                 </div>
                 <div class="intro-video">
                     <div class="video-container">
-                        <iframe width="1397" height="786" src="https://www.youtube.com/embed/-tJRbQ-pSbQ" title="Hospital Management System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                        <iframe width="1397" height="786" src="https://www.youtube.com/embed/-tJRbQ-pSbQ" title="Hospital Management System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Core Modules Section -->
-  <!-- Core Modules Section -->
-<section class="core-modules">
-    <div class="container">
-        <h2 class="section-title">Core Modules</h2>
-        <p class="section-description">Comprehensive features covering every facet of hospital and healthcare management</p>
-        
-        <div class="modules-grid">
-            <!-- Core Hospital Modules -->
-            <div class="module-card">
-                <div class="module-header">
-                    <h3>Core Hospital Modules</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="module-content">
-                    <ul>
-                        <li>Appointment Management (Online & Offline)</li>
-                        <li>Patient Registration</li>
-                        <li>OPD Management</li>
-                        <li>IPD Management</li>
-                        <li>Electronic Medical Records (EMR)</li>
-                        <li>Laboratory Information Management System (LIMS)</li>
-                        <li>Doctor Management</li>
-                        <li>E-Prescription Preparation</li>
-                        <li>Patient Management</li>
-                        <li>Billing and Invoicing</li>
-                    </ul>
-                </div>
-            </div>
+    <section class="core-modules">
+        <div class="container">
+            <h2 class="section-title">Core Modules</h2>
+            <p class="section-description">Comprehensive features covering every facet of hospital and healthcare management</p>
             
-            <!-- Additional Hospital Modules -->
-            <div class="module-card">
-                <div class="module-header">
-                    <h3>Additional Hospital Modules</h3>
-                    <i class="fas fa-chevron-down"></i>
+            <div class="modules-grid">
+                <!-- Core Hospital Modules -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Core Hospital Modules</h3>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Appointment Management (Online & Offline)</li>
+                            <li>Patient Registration</li>
+                            <li>OPD Management</li>
+                            <li>IPD Management</li>
+                            <li>Electronic Medical Records (EMR)</li>
+                            <li>Laboratory Information Management System (LIMS)</li>
+                            <li>Doctor Management</li>
+                            <li>E-Prescription Preparation</li>
+                            <li>Patient Management</li>
+                            <li>Billing and Invoicing</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="module-content">
-                    <ul>
-                        <li>Patient Portal</li>
-                        <li>Video Conferencing</li>
-                        <li>Pharmacy Management</li>
-                        <li>Ambulance Management</li>
-                        <li>Blood Bank Management</li>
-                        <li>Patient Insurance Management</li>
-                        <li>Medical Certificate Preparation</li>
-                    </ul>
+                
+                <!-- Additional Hospital Modules -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Additional Hospital Modules</h3>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Patient Portal</li>
+                            <li>Video Conferencing</li>
+                            <li>Pharmacy Management</li>
+                            <li>Ambulance Management</li>
+                            <li>Blood Bank Management</li>
+                            <li>Patient Insurance Management</li>
+                            <li>Medical Certificate Preparation</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-          <!-- Administrative Modules -->
-            <div class="module-card">
-                <div class="module-header">
-                    <h3>Administrative Modules</h3>
-                    <i class="fas fa-chevron-down"></i>
+                
+                <!-- Administrative Modules -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Administrative Modules</h3>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Dashboard</li>
+                            <li>HR, Attendance & Payroll</li>
+                            <li>Reception and Helpdesk</li>
+                            <li>Security and Access Control</li>
+                            <li>Reporting and Analytics</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="module-content">
-                    <ul>
-                       <li>Dashboard</li>
-                        <li>HR, Attendance & Payroll</li>
-                        <li>Reception and Helpdesk</li>
-                        <li>Security and Access Control</li>
-                        <li>Reporting and Analytics</li>
-                    </ul>
-                </div>
-            </div>
 
-               <!-- Accounting & Operational Modules -->
-            <div class="module-card">
-                <div class="module-header">
-                    <h3>Accounting & Operational Modules</h3>
-                    <i class="fas fa-chevron-down"></i>
+                <!-- Accounting & Operational Modules -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Accounting & Operational Modules</h3>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Procurement</li>
+                            <li>Inventory</li>
+                            <li>Sales and Revenue</li>
+                            <li>Budgeting and Expense</li>
+                            <li>Approval Management</li>
+                            <li>Finance and Accounts</li>
+                            <li>Asset Management</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="module-content">
-                    <ul>
-                        <li>Procurement</li>
-                        <li>Inventory</li>
-                        <li>Sales and Revenue</li>
-                        <li>Budgeting and Expense</li>
-                        <li>Approval Management</li>
-                        <li>Finance and Accounts</li>
-                        <li>Asset Management</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Marketing & Communication Modules -->
-            <div class="module-card">
-                <div class="module-header">
-                    <h3>Marketing & Communication</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="module-content">
-                    <ul>
-                        <li>CRM</li>
-                        <li>Email Marketing</li>
-                        <li>SMS Marketing</li>
-                        <li>Event and Seminar Management</li>
-                        <li>Website and Live Chat Management</li>
-                    </ul>
+                
+                <!-- Marketing & Communication Modules -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Marketing & Communication</h3>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>CRM</li>
+                            <li>Email Marketing</li>
+                            <li>SMS Marketing</li>
+                            <li>Event and Seminar Management</li>
+                            <li>Website and Live Chat Management</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Key Advantages Section -->
- <!-- Key Advantages Section -->
-<section class="key-advantages">
-    <div class="container">
-        <h2 class="section-title">Key Advantages</h2>
-        <p class="section-description">Discover how Smart Hospital transforms healthcare institutions with powerful features</p>
-        
-        <div class="advantages-grid">
-            <!-- Advantage 1 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="50">
-                <div class="advantage-icon">
-                    <i class="fas fa-link"></i>
-                </div>
-                <h3>Seamless Integration & Centralized Control</h3>
-                <p>Unifies all hospital departments—clinical, administrative, and financial—under one platform for streamlined operations and data harmony.</p>
-                <div class="advantage-wave"></div>
-            </div>
+    <section class="key-advantages">
+        <div class="container">
+            <h2 class="section-title">Key Advantages</h2>
+            <p class="section-description">Discover how Smart Hospital transforms healthcare institutions with powerful features</p>
             
-            <!-- Advantage 2 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="advantage-icon">
-                    <i class="fas fa-robot"></i>
+            <div class="advantages-grid">
+                <!-- Advantage 1 -->
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="advantage-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Seamless Integration & Centralized Control</h3>
+                    <p>Unifies all hospital departments—clinical, administrative, and financial—under one platform for streamlined operations and data harmony.</p>
                 </div>
-                <h3>Enhanced Patient Experience</h3>
-                <p>Improves patient satisfaction through online appointment booking, real-time updates, and access to personal medical records.</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 3 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="150">
-                <div class="advantage-icon">
-                    <i class="fas fa-chart-pie"></i>
+                
+                <!-- Advantage 2 -->
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="advantage-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Enhanced Patient Experience</h3>
+                    <p>Improves patient satisfaction through online appointment booking, real-time updates, and access to personal medical records.</p>
                 </div>
-                <h3>Comprehensive & Secure Healthcare Records</h3>
-                <p>Maintains complete electronic medical histories with secure, role-based access and compliance with healthcare regulations.</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 4 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="advantage-icon">
-                    <i class="fas fa-eye"></i>
+                
+                <!-- Advantage 3 -->
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="advantage-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Comprehensive & Secure Healthcare Records</h3>
+                    <p>Maintains complete electronic medical histories with secure, role-based access and compliance with healthcare regulations.</p>
                 </div>
-                <h3>Optimized Clinical Workflows</h3>
-                <p>Enhances OPD/IPD efficiency, from doctor management to e-prescriptions, ensuring faster, more coordinated care delivery.</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 5 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="250">
-                <div class="advantage-icon">
-                    <i class="fas fa-leaf"></i>
+                
+                <!-- Advantage 4 -->
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="advantage-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Optimized Clinical Workflows</h3>
+                    <p>Enhances OPD/IPD efficiency, from doctor management to e-prescriptions, ensuring faster, more coordinated care delivery.</p>
                 </div>
-                <h3>Real-Time Reporting & Insights</h3>
-                <p>Provides administrators with live dashboards and data analytics to support data-driven decision-making and operational transparency.</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 6 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="advantage-icon">
-                    <i class="fas fa-globe"></i>
+                
+                <!-- Advantage 5 -->
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="advantage-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Real-Time Reporting & Insights</h3>
+                    <p>Provides administrators with live dashboards and data analytics to support data-driven decision-making and operational transparency.</p>
                 </div>
-                <h3>Cost Efficiency & Resource Optimization</h3>
-                <p>Reduces overhead through automated workflows, controlled budgeting, and optimized resource allocation.</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 7 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="350">
-                <div class="advantage-icon">
-                    <i class="fas fa-users"></i>
+                
+                <!-- Advantage 6 -->
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="advantage-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Cost Efficiency & Resource Optimization</h3>
+                    <p>Reduces overhead through automated workflows, controlled budgeting, and optimized resource allocation.</p>
                 </div>
-                <h3>Scalability & Remote Accessibility</h3>
-                <p>Grows with your institution and supports cloud-based access for healthcare providers and administrators anytime, anywhere.</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 8 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="advantage-icon">
-                    <i class="fas fa-lock"></i>
+                
+                <!-- Advantage 7 -->
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="advantage-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Scalability & Remote Accessibility</h3>
+                    <p>Grows with your institution and supports cloud-based access for healthcare providers and administrators anytime, anywhere.</p>
                 </div>
-                <h3>Paperless, Sustainable Operations</h3>
-                <p>Promotes digital transformation with electronic documentation, reducing paper usage and supporting eco-friendly practices.</p>
-                <div class="advantage-wave"></div>
+                
+                <!-- Advantage 8 -->
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="advantage-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Paperless, Sustainable Operations</h3>
+                    <p>Promotes digital transformation with electronic documentation, reducing paper usage and supporting eco-friendly practices.</p>
+                </div>
             </div>
         </div>
-        
-       
-    </div>
-</section>
+    </section>
 
-
-<!-- Clients Section -->
-<section class="clients-section">
-    <div class="container">
-        <h2 class="section-title">Our Esteemed Clients</h2>
-        <p class="section-description">Trusted by businesses across industries for efficient enterprise management</p>
-        
-        <div class="client-logos-container">
-            <div class="client-logos-track">
-                <div class="client-logo-item">
-                    <img src="../images/BNSB.png" alt="BNSB Dhaka Eye Hospital" class="client-logo">
-                    <div class="client-tooltip">
-                        <h4>BNSB Dhaka Eye Hospital</h4>
-                        <p>Improved academic efficiency and paperless operations with Smart Edu</p>
+    <!-- Clients Section -->
+    <section class="clients-section">
+        <div class="container">
+            <h2 class="section-title">Our Esteemed Clients</h2>
+            <p class="section-description">Trusted by businesses across industries for efficient enterprise management</p>
+            
+            <div class="client-logos-container">
+                <div class="client-logos-track">
+                    <div class="client-logo-item">
+                        <img src="../images/BNSB.png" alt="BNSB Dhaka Eye Hospital" class="client-logo">
                     </div>
-                </div>
-                <div class="client-logo-item">
-                    <img src="../images/peoplememorial.png" alt="People Memorial Hospital" class="client-logo">
-                    <div class="client-tooltip">
-                        <h4>People Memorial Hospital</h4>
-                        <p>Streamlined administration and better parent engagement</p>
+                    <div class="client-logo-item">
+                        <img src="../images/peoplememorial.png" alt="People Memorial Hospital" class="client-logo">
                     </div>
-                </div>
-                <div class="client-logo-item">
-                    <img src="../images/rokeya.png" alt="Rokeya Specialized Hospital" class="client-logo">
-                    <div class="client-tooltip">
-                        <h4>Rokeya Specialized Hospital</h4>
-                        <p>Reduced paperwork by 80% with our digital solution</p>
+                    <div class="client-logo-item">
+                        <img src="../images/rokeya.png" alt="Rokeya Specialized Hospital" class="client-logo">
                     </div>
-                </div>
-                <div class="client-logo-item">
-                    <img src="../images/sahic.png" alt="SAHIC" class="client-logo">
-                    <div class="client-tooltip">
-                        <h4>Society for Assistance to Hearing Impaired Children (SAHIC)</h4>
-                        <p>Integrated university management for 15,000+ students</p>
+                    <div class="client-logo-item">
+                        <img src="../images/sahic.png" alt="SAHIC" class="client-logo">
                     </div>
-                </div>
-                <div class="client-logo-item">
-                    <img src="../images/BCDC.png" alt="Bakhtunnessa Chowdhury Diabetes Centre" class="client-logo">
-                    <div class="client-tooltip">
-                        <h4>Bakhtunnessa Chowdhury Diabetes Centre</h4>
-                        <p>Automated attendance and grading system saved 300+ hours monthly</p>
+                    <div class="client-logo-item">
+                        <img src="../images/BCDC.png" alt="Bakhtunnessa Chowdhury Diabetes Centre" class="client-logo">
                     </div>
-                </div>
-                <div class="client-logo-item">
-                    <img src="../images/cardiocare.png" alt="Cardio Care Specialized & General Hospital" class="client-logo">
-                    <div class="client-tooltip">
-                        <h4>Cardio Care Specialized & General Hospital</h4>
-                        <p>Streamlined administration and better parent engagement</p>
+                    <div class="client-logo-item">
+                        <img src="../images/cardiocare.png" alt="Cardio Care Specialized & General Hospital" class="client-logo">
                     </div>
-                </div>
-                <!-- Duplicate items for infinite loop -->
-                <div class="client-logo-item">
-                    <img src="../images/BNSB.png" alt="BNSB Dhaka Eye Hospital" class="client-logo">
-                    <div class="client-tooltip">
-                        <h4>BNSB Dhaka Eye Hospital</h4>
-                        <p>Improved academic efficiency and paperless operations with Smart Edu</p>
+                    <!-- Duplicate items for infinite loop -->
+                    <div class="client-logo-item">
+                        <img src="../images/BNSB.png" alt="BNSB Dhaka Eye Hospital" class="client-logo">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <!-- Contact CTA Section -->
     <section class="contact-cta">
         <div class="container">
@@ -1809,20 +1692,18 @@
                         <div class="form-group">
                             <input type="tel" placeholder="Phone Number" required>
                         </div>
-                            <!-- changed -->
                         <div class="form-group">
-                        <label for="product-select">Choose a product:</label>
-                        <select id="product-select" name="product">
-                            <option value="">Select Product</option>
-                            <option value="smart-edu">Smart Edu</option>
-                            <option value="smart-hospital"selected>Smart Hospital</option>
-                            <option value="smart-business">Smart Business 24</option>
-                            <option value="iums">IUMS</option>
-                            <option value="1card">1 Card</option>
-                            <option value="virtual-gate">Virtual Gate</option>
-                        </select>
+                            <label for="product-select">Choose a product:</label>
+                            <select id="product-select" name="product">
+                                <option value="">Select Product</option>
+                                <option value="smart-edu">Smart Edu</option>
+                                <option value="smart-hospital" selected>Smart Hospital</option>
+                                <option value="smart-business">Smart Business 24</option>
+                                <option value="iums">IUMS</option>
+                                <option value="1card">1 Card</option>
+                                <option value="virtual-gate">Virtual Gate</option>
+                            </select>
                         </div>  
-
                         <div class="form-group">
                             <textarea placeholder="Additional Notes"></textarea>
                         </div>
@@ -1832,12 +1713,11 @@
             </div>
         </div>
     </section>
-   
 
     <!-- Demo Request Modal -->
     <div class="modal" id="demoModal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal">×</span>
             <h2>Request a Demo</h2>
             <p>Fill out the form below to schedule a personalized demo of Smart Hospital</p>
             <form id="demoForm">
@@ -1856,8 +1736,8 @@
                 <div class="form-group">
                     <select required>
                         <option value="">Select Product</option>
-                        <option value="smart-edu" >Smart Edu</option>
-                        <option value="smart-hospital"selected>Smart Hospital</option>
+                        <option value="smart-edu">Smart Edu</option>
+                        <option value="smart-hospital" selected>Smart Hospital</option>
                         <option value="smart-business">Smart Business 24</option>
                         <option value="iums">IUMS</option>
                         <option value="1card">1 Card</option>
@@ -1872,7 +1752,7 @@
     <!-- Brochure Modal -->
     <div class="modal" id="brochureModal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal">×</span>
             <h2>Smart Hospital Brochure</h2>
             <div class="brochure-viewer">
                 <iframe src="https://drive.google.com/file/d/1YFouVD4PrKKBmBdIMSNKO0Tc_Gicfrk0/preview" frameborder="0"></iframe>
@@ -1891,7 +1771,7 @@
     <!-- Thank You Modal -->
     <div class="modal" id="thankYouModal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal">×</span>
             <div class="thank-you-content">
                 <i class="fas fa-check-circle"></i>
                 <h2>Thank You!</h2>
@@ -1899,7 +1779,7 @@
                 <p>We appreciate your interest in Daffodil Software Ltd. For any assistance, feel free to call <strong>+8801713493026</strong>.</p>
                 <div class="demo-credentials">
                     <h4>Demo Access:</h4>
-                    <p> <strong>Demo Link:</strong>  <a href="https://demo-hms.daffodilsoft.com/web/login" target="_blank" rel="noopener">https://demo-hms.daffodilsoft.com</a></p>
+                    <p><strong>Demo Link:</strong> <a href="https://demo-hms.daffodilsoft.com/web/login" target="_blank" rel="noopener">https://demo-hms.daffodilsoft.com</a></p>
                     <p><strong>Login ID:</strong> demo@gmail.com</p>
                     <p><strong>Password:</strong> 1</p>
                 </div>
@@ -1970,9 +1850,8 @@
                         <h4>Subscribe to Newsletter</h4>
                         <form>
                             <input type="email" placeholder="Your Email">
-                            <button type="submit"aria-label="Subscribe to Newsletter"><i class="fas fa-paper-plane"></i></button>
+                            <button type="submit" aria-label="Subscribe to Newsletter"><i class="fas fa-paper-plane"></i></button>
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -1997,7 +1876,6 @@
         </div>
     </footer>
 
-
     <!-- Fixed side bar for Social Media -->
     <div class="fixedsocial-icons">
         <a href="https://www.facebook.com/daffodilsoft" class="social-icon facebook" aria-label="Facebook">
@@ -2014,9 +1892,7 @@
         </a>
     </div>
 
-
-
-<!-- Back to Top Button -->
+    <!-- Back to Top Button -->
     <div class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
@@ -2024,6 +1900,7 @@
     <!-- Custom Mouse Animation -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile Menu Toggle
@@ -2048,51 +1925,6 @@
                 });
             });
 
-            // Module Cards Accordion with hover effect
-            const moduleCards = document.querySelectorAll('.module-card');
-            
-            moduleCards.forEach(card => {
-                const header = card.querySelector('.module-header');
-                
-                // Click functionality for mobile
-                header.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        // Close all other cards
-                        moduleCards.forEach(otherCard => {
-                            if (otherCard !== card && otherCard.classList.contains('active')) {
-                                otherCard.classList.remove('active');
-                            }
-                        });
-                        
-                        // Toggle current card
-                        card.classList.toggle('active');
-                    }
-                });
-
-                // Hover functionality for desktop
-                if (window.innerWidth > 768) {
-                    card.addEventListener('mouseenter', function() {
-                        // Close all other cards
-                        moduleCards.forEach(otherCard => {
-                            if (otherCard !== card && otherCard.classList.contains('active')) {
-                                otherCard.classList.remove('active');
-                            }
-                        });
-                        
-                        // Open current card
-                        card.classList.add('active');
-                    });
-
-                    // Keep card open when hovering over content
-                    card.addEventListener('mouseleave', function(e) {
-                        // Check if mouse is leaving the card entirely
-                        if (!card.contains(e.relatedTarget)) {
-                            card.classList.remove('active');
-                        }
-                    });
-                }
-            });
-
             // Client Logos Auto-Scrolling
             const clientTrack = document.querySelector('.client-logos-track');
             let clientPosition = 0;
@@ -2102,7 +1934,6 @@
             function animateClients() {
                 clientPosition -= clientScrollSpeed;
                 
-                // Reset position when scrolled all items
                 if (clientPosition < -clientTrack.scrollWidth / 2) {
                     clientPosition = 0;
                 }
@@ -2180,9 +2011,6 @@
                     e.preventDefault();
                     demoModal.style.display = 'none';
                     thankYouModal.style.display = 'block';
-                    
-                    // Here you would typically send the form data to your server
-                    // For demo purposes, we're just showing the thank you modal
                 });
             }
 
@@ -2190,11 +2018,7 @@
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    
-                    // Show thank you message (could be enhanced with actual form submission)
-                    alert('Thank you for reaching out. Our team will contact you shortly. For urgent support, call us at +8801713493026. We appreciate your interest in Smart Edu!');
-                    
-                    // Reset form
+                    alert('Thank you for reaching out. Our team will contact you shortly. For urgent support, call us at +8801713493026. We appreciate your interest in Smart Hospital!');
                     contactForm.reset();
                 });
             }
@@ -2205,8 +2029,8 @@
                 shareBtn.addEventListener('click', function() {
                     if (navigator.share) {
                         navigator.share({
-                            title: 'Smart Edu Brochure',
-                            text: 'Check out the Smart Edu brochure from Daffodil Software Ltd',
+                            title: 'Smart Hospital Brochure',
+                            text: 'Check out the Smart Hospital brochure from Daffodil Software Ltd',
                             url: '/brochure/smart-hospital-brochure.pdf',
                         })
                         .catch(err => {
@@ -2214,19 +2038,15 @@
                             alert('Sharing failed. Please try again or copy the link manually.');
                         });
                     } else {
-                        // Fallback for browsers that don't support Web Share API
-                        alert('Web Share API not supported in your browser. Please copy the link manually.');
+                        const tempInput = document.createElement('input');
+                        tempInput.value = '/brochure/smart-hospital-brochure.pdf';
+                        document.body.appendChild(tempInput);
+                        tempInput.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tempInput);
+                        alert('Link copied to clipboard: /brochure/smart-hospital-brochure.pdf');
                     }
                 });
-            }
-            else {
-                const tempInput = document.createElement('input');
-                tempInput.value = brochureUrl;
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                document.execCommand('copy');
-                document.body.removeChild(tempInput);
-                alert('Link copied to clipboard: ' + brochureUrl);
             }
 
             // Start animations
@@ -2240,99 +2060,48 @@
                     animateClients();
                 }
             });
-
-            // Update module card behavior on window resize
-            window.addEventListener('resize', function() {
-                moduleCards.forEach(card => {
-                    if (window.innerWidth > 768) {
-                        // Remove click event and add hover for desktop
-                        card.querySelector('.module-header').removeEventListener('click', handleModuleClick);
-                        card.addEventListener('mouseenter', handleModuleHover);
-                        card.addEventListener('mouseleave', handleModuleLeave);
-                    } else {
-                        // Remove hover events and add click for mobile
-                        card.removeEventListener('mouseenter', handleModuleHover);
-                        card.removeEventListener('mouseleave', handleModuleLeave);
-                        card.querySelector('.module-header').addEventListener('click', handleModuleClick);
-                    }
-                });
-            });
-
-            function handleModuleClick() {
-                const card = this.closest('.module-card');
-                // Close all other cards
-                moduleCards.forEach(otherCard => {
-                    if (otherCard !== card && otherCard.classList.contains('active')) {
-                        otherCard.classList.remove('active');
-                    }
-                });
-                
-                // Toggle current card
-                card.classList.toggle('active');
-            }
-
-            function handleModuleHover() {
-                const card = this;
-                // Close all other cards
-                moduleCards.forEach(otherCard => {
-                    if (otherCard !== card && otherCard.classList.contains('active')) {
-                        otherCard.classList.remove('active');
-                    }
-                });
-                
-                // Open current card
-                card.classList.add('active');
-            }
-
-            function handleModuleLeave(e) {
-                const card = this;
-                // Check if mouse is leaving the card entirely
-                if (!card.contains(e.relatedTarget)) {
-                    card.classList.remove('active');
-                }
-            }
         });
 
-         // Back to Top Button
-    const backToTop = document.querySelector('.back-to-top');
-  
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTop.classList.add('show');
-      } else {
-        backToTop.classList.remove('show');
-      }
-    });
-  
-    backToTop.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  
-    // Scroll Animations
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.animate__animated');
-      const windowHeight = window.innerHeight;
-      const triggerPoint = windowHeight / 1.3;
-  
-      elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
+        // Back to Top Button
+        const backToTop = document.querySelector('.back-to-top');
         
-        if (elementPosition < triggerPoint) {
-          const animation = element.classList.contains('animate__fadeInUp') ? 'fadeInUp' :
-                           element.classList.contains('animate__fadeInDown') ? 'fadeInDown' :
-                           element.classList.contains('animate__fadeInLeft') ? 'fadeInLeft' :
-                           element.classList.contains('animate__fadeInRight') ? 'fadeInRight' : 'fadeIn';
-          
-          element.classList.add(`animate__${animation}`);
-        }
-      });
-    };
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Scroll Animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate__animated');
+            const windowHeight = window.innerHeight;
+            const triggerPoint = windowHeight / 1.3;
+        
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                
+                if (elementPosition < triggerPoint) {
+                    const animation = element.classList.contains('animate__fadeInUp') ? 'fadeInUp' :
+                                    element.classList.contains('animate__fadeInDown') ? 'fadeInDown' :
+                                    element.classList.contains('animate__fadeInLeft') ? 'fadeInLeft' :
+                                    element.classList.contains('animate__fadeInRight') ? 'fadeInRight' : 'fadeIn';
+                    
+                    element.classList.add(`animate__${animation}`);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
-
-<!-- Mirrored from daffodilsoft.netlify.app/products/smart-hospital by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jun 2025 20:05:47 GMT -->
 </html>

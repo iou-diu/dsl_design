@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Business 24 - All-in-One ERP Solution for Modern Enterprises | Daffodil Software Ltd</title>
-    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         /* Base Styles */
         :root {
@@ -1805,15 +1805,6 @@
 </section>
 
 
-    <!-- Clients Section -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello, World!</title>
-    <link rel="stylesheet" href="styles.html" />
-  </head>
-  <body>
-<!-- Testimonials Section -->
 <!-- Clients Section -->
 <section class="clients-section">
     <div class="container">
@@ -1945,8 +1936,6 @@
       <script src="script.html"></script>
   </body>
 
-<!-- Mirrored from daffodilsoft.netlify.app/products/smart-business by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jun 2025 20:06:01 GMT -->
-</html>
 
     <!-- Contact CTA Section -->
     <section class="contact-cta">
@@ -2195,7 +2184,7 @@
     <!-- Custom Mouse Animation -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
-    <script>
+   <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile Menu Toggle
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -2219,61 +2208,15 @@
                 });
             });
 
-            // Module Cards Accordion with hover effect
-            const moduleCards = document.querySelectorAll('.module-card');
-            
-            moduleCards.forEach(card => {
-                const header = card.querySelector('.module-header');
-                
-                // Click functionality for mobile
-                header.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        // Close all other cards
-                        moduleCards.forEach(otherCard => {
-                            if (otherCard !== card && otherCard.classList.contains('active')) {
-                                otherCard.classList.remove('active');
-                            }
-                        });
-                        
-                        // Toggle current card
-                        card.classList.toggle('active');
-                    }
-                });
-
-                // Hover functionality for desktop
-                if (window.innerWidth > 768) {
-                    card.addEventListener('mouseenter', function() {
-                        // Close all other cards
-                        moduleCards.forEach(otherCard => {
-                            if (otherCard !== card && otherCard.classList.contains('active')) {
-                                otherCard.classList.remove('active');
-                            }
-                        });
-                        
-                        // Open current card
-                        card.classList.add('active');
-                    });
-
-                    // Keep card open when hovering over content
-                    card.addEventListener('mouseleave', function(e) {
-                        // Check if mouse is leaving the card entirely
-                        if (!card.contains(e.relatedTarget)) {
-                            card.classList.remove('active');
-                        }
-                    });
-                }
-            });
-
             // Client Logos Auto-Scrolling
             const clientTrack = document.querySelector('.client-logos-track');
             let clientPosition = 0;
-            const clientScrollSpeed = 1;
+            const clientScrollSpeed = 0.5; // Adjust speed as needed
             let clientAnimationId;
 
             function animateClients() {
                 clientPosition -= clientScrollSpeed;
                 
-                // Reset position when scrolled all items
                 if (clientPosition < -clientTrack.scrollWidth / 2) {
                     clientPosition = 0;
                 }
@@ -2351,9 +2294,6 @@
                     e.preventDefault();
                     demoModal.style.display = 'none';
                     thankYouModal.style.display = 'block';
-                    
-                    // Here you would typically send the form data to your server
-                    // For demo purposes, we're just showing the thank you modal
                 });
             }
 
@@ -2361,11 +2301,7 @@
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    
-                    // Show thank you message (could be enhanced with actual form submission)
-                    alert('Thank you for reaching out. Our team will contact you shortly. For urgent support, call us at +8801713493026. We appreciate your interest in Smart Edu!');
-                    
-                    // Reset form
+                    alert('Thank you for reaching out. Our team will contact you shortly. For urgent support, call us at +8801713493026. We appreciate your interest in Smart Hospital!');
                     contactForm.reset();
                 });
             }
@@ -2376,17 +2312,22 @@
                 shareBtn.addEventListener('click', function() {
                     if (navigator.share) {
                         navigator.share({
-                            title: 'Smart Edu Brochure',
-                            text: 'Check out the Smart Edu brochure from Daffodil Software Ltd',
-                            url: '/brochure/smart-business-brochure.pdf',
+                            title: 'Smart Hospital Brochure',
+                            text: 'Check out the Smart Hospital brochure from Daffodil Software Ltd',
+                            url: '/brochure/smart-hospital-brochure.pdf',
                         })
                         .catch(err => {
                             console.log('Error sharing:', err);
                             alert('Sharing failed. Please try again or copy the link manually.');
                         });
                     } else {
-                        // Fallback for browsers that don't support Web Share API
-                        alert('Web Share API not supported in your browser. Please copy the link manually.');
+                        const tempInput = document.createElement('input');
+                        tempInput.value = '/brochure/smart-hospital-brochure.pdf';
+                        document.body.appendChild(tempInput);
+                        tempInput.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tempInput);
+                        alert('Link copied to clipboard: /brochure/smart-hospital-brochure.pdf');
                     }
                 });
             }
@@ -2402,98 +2343,48 @@
                     animateClients();
                 }
             });
-
-            // Update module card behavior on window resize
-            window.addEventListener('resize', function() {
-                moduleCards.forEach(card => {
-                    if (window.innerWidth > 768) {
-                        // Remove click event and add hover for desktop
-                        card.querySelector('.module-header').removeEventListener('click', handleModuleClick);
-                        card.addEventListener('mouseenter', handleModuleHover);
-                        card.addEventListener('mouseleave', handleModuleLeave);
-                    } else {
-                        // Remove hover events and add click for mobile
-                        card.removeEventListener('mouseenter', handleModuleHover);
-                        card.removeEventListener('mouseleave', handleModuleLeave);
-                        card.querySelector('.module-header').addEventListener('click', handleModuleClick);
-                    }
-                });
-            });
-
-            function handleModuleClick() {
-                const card = this.closest('.module-card');
-                // Close all other cards
-                moduleCards.forEach(otherCard => {
-                    if (otherCard !== card && otherCard.classList.contains('active')) {
-                        otherCard.classList.remove('active');
-                    }
-                });
-                
-                // Toggle current card
-                card.classList.toggle('active');
-            }
-
-            function handleModuleHover() {
-                const card = this;
-                // Close all other cards
-                moduleCards.forEach(otherCard => {
-                    if (otherCard !== card && otherCard.classList.contains('active')) {
-                        otherCard.classList.remove('active');
-                    }
-                });
-                
-                // Open current card
-                card.classList.add('active');
-            }
-
-            function handleModuleLeave(e) {
-                const card = this;
-                // Check if mouse is leaving the card entirely
-                if (!card.contains(e.relatedTarget)) {
-                    card.classList.remove('active');
-                }
-            }
         });
 
-         // Back to Top Button
-    const backToTop = document.querySelector('.back-to-top');
-  
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTop.classList.add('show');
-      } else {
-        backToTop.classList.remove('show');
-      }
-    });
-  
-    backToTop.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  
-    // Scroll Animations
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.animate__animated');
-      const windowHeight = window.innerHeight;
-      const triggerPoint = windowHeight / 1.3;
-  
-      elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
+        // Back to Top Button
+        const backToTop = document.querySelector('.back-to-top');
         
-        if (elementPosition < triggerPoint) {
-          const animation = element.classList.contains('animate__fadeInUp') ? 'fadeInUp' :
-                           element.classList.contains('animate__fadeInDown') ? 'fadeInDown' :
-                           element.classList.contains('animate__fadeInLeft') ? 'fadeInLeft' :
-                           element.classList.contains('animate__fadeInRight') ? 'fadeInRight' : 'fadeIn';
-          
-          element.classList.add(`animate__${animation}`);
-        }
-      });
-    };
-    
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Scroll Animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate__animated');
+            const windowHeight = window.innerHeight;
+            const triggerPoint = windowHeight / 1.3;
+        
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                
+                if (elementPosition < triggerPoint) {
+                    const animation = element.classList.contains('animate__fadeInUp') ? 'fadeInUp' :
+                                    element.classList.contains('animate__fadeInDown') ? 'fadeInDown' :
+                                    element.classList.contains('animate__fadeInLeft') ? 'fadeInLeft' :
+                                    element.classList.contains('animate__fadeInRight') ? 'fadeInRight' : 'fadeIn';
+                    
+                    element.classList.add(`animate__${animation}`);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
 </html>

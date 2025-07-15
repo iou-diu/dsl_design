@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from daffodilsoft.netlify.app/products/smart-edu by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jun 2025 20:05:41 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Edu - School & College Management Software | Daffodil Software Ltd</title>
-    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         /* Base Styles */
         :root {
@@ -86,7 +84,7 @@
 
         .btn:hover {
             background: transparent;
-            color: var(#004080);
+            color: var(--primary-color);
             transform: translateY(-3px);
             box-shadow: var(--shadow);
         }
@@ -175,8 +173,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 15px 15px;
         }
+        .mobile-menu-btn {
+    z-index: 22222;
+}
 
         .logo {
             display: inline-block;
@@ -271,7 +272,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80') center/cover no-repeat;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
             opacity: 0.1;
             z-index: 0;
         }
@@ -467,96 +468,83 @@
         }
 
         /* Core Modules Section */
-        /* Core Modules Section */
-    .core-modules {
-        padding: 80px 0;
-        background: #f8f9fa;
-    }
-
-    .modules-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
-    .module-card {
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-        border: 1px solid #e9ecef;
-    }
-
-    .module-header {
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        background: transparent;
-        color: #333;
-    }
-
-    .module-header h3 {
-        margin: 0;
-        font-size: 18px;
-        font-weight: 600;
-    }
-
-    .module-header i {
-        transition: transform 0.3s ease;
-        color: #777;
-    }
-
-    .module-card.active .module-header i {
-        transform: rotate(180deg);
-    }
-
-    .module-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-
-    .module-card.active .module-content {
-        max-height: 500px;
-    }
-
-    .module-content ul {
-        padding: 0 20px 20px;
-        margin: 0;
-    }
-
-    .module-content li {
-        padding: 8px 0;
-        font-size: 14px;
-        color: #555;
-        border-bottom: 1px solid #f0f0f0;
-        position: relative;
-    }
-
-    .module-content li:last-child {
-        border-bottom: none;
-    }
-
-    .module-content li:hover::before {
-        content: "→";
-        position: absolute;
-        left: -15px;
-        color: #0066cc;
-    }
-
-    /* Hover effects for desktop */
-    @media (min-width: 769px) {
-        .module-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .core-modules {
+            padding: 80px 0;
+            background: #f8f9fa;
         }
 
-        .module-card:hover .module-header {
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .module-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e9ecef;
+            transition: all .5s;
+        }
+
+        .module-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            color: #333;
+        }
+
+        .module-header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .module-header i {
+            color: #777;
+        }
+
+        .module-content {
+            padding: 0 20px 20px;
+        }
+
+        .module-content ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .module-content li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+        }
+
+        .module-content li:last-child {
+            border-bottom: none;
+        }
+
+        .module-content li:hover::before {
+            content: "→";
+            position: absolute;
+            left: -15px;
             color: #0066cc;
         }
-    }
+
+        /* Hover effects for desktop */
+        @media (min-width: 769px) {
+            .module-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .module-card:hover .module-header {
+                color: #0066cc;
+            }
+        }
 
         /* Key Advantages Section */
         .key-advantages {
@@ -804,34 +792,6 @@
         .form-group textarea {
             min-height: 100px;
             resize: vertical;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            text-align: center;
-        }
-
-        .cta-title {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
-
-        .cta-description {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            font-size: 18px;
-        }
-
-        .cta-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
         }
 
         /* Footer */
@@ -1094,9 +1054,7 @@
             margin-top: 20px;
         }
 
-
         /* Fixed side bar for Social Media */
-        /* social media side bar */
         .fixedsocial-icons {
             position: fixed;
             right: 20px;
@@ -1191,7 +1149,7 @@
             background: var(--secondary-color);
             transform: translateY(-5px);
         }
-        
+
         /* Custom Cursor */
         .cursor {
             position: fixed;
@@ -1205,7 +1163,7 @@
             transform: translate(-50%, -50%);
             transition: transform 0.1s ease;
         }
-        
+
         .cursor-follower {
             position: fixed;
             width: 40px;
@@ -1217,36 +1175,37 @@
             transform: translate(-50%, -50%);
             transition: all 0.3s ease-out, background 0.1s ease, border 0.1s ease;
         }
-        
+
         .cursor.hover,
         .cursor-follower.hover {
             transform: translate(-50%, -50%) scale(1.5);
             background: var(--secondary-color);
             border-color: var(--secondary-color);
         }
-                /* Responsive Styles */
+
+        /* Responsive Styles */
         @media (max-width: 992px) {
             .product-hero .hero-content {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .product-hero .hero-btns {
                 justify-content: center;
             }
-            
+
             .product-intro .intro-content {
                 flex-direction: column;
             }
-            
+
             .contact-cta .cta-content {
                 flex-direction: column;
             }
-            
+
             .contact-cta .cta-form {
                 max-width: 100%;
             }
-            
+
             .section-title {
                 font-size: 32px;
             }
@@ -1256,7 +1215,7 @@
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             .nav-links {
                 position: fixed;
                 top: 80px;
@@ -1270,15 +1229,15 @@
                 transition: var(--transition);
                 z-index: 999;
             }
-            
+
             .nav-links.active {
                 left: 0;
             }
-            
+
             .nav-links li {
                 margin: 15px 0;
             }
-            
+
             .dropdown-menu {
                 position: static;
                 width: 100%;
@@ -1289,41 +1248,33 @@
                 padding: 0;
                 margin-top: 10px;
             }
-            
-            .dropdown:hover .dropdown-menu {
-                transform: none;
-            }
-            
+
             .dropdown.active .dropdown-menu {
                 display: block;
             }
-            
+
             .product-hero h1 {
                 font-size: 36px;
             }
-            
+
             .product-hero h2 {
                 font-size: 20px;
             }
-            
+
             .product-hero .hero-btns {
                 flex-direction: column;
             }
-            
-            .cta-title {
-                font-size: 32px;
-            }
-            
+
             .footer-bottom {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-            
+
             .cta-stats {
                 flex-direction: column;
                 gap: 20px;
             }
-            
+
             .stat-item {
                 text-align: left;
             }
@@ -1334,39 +1285,32 @@
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .product-hero {
                 padding: 80px 0 60px;
             }
-            
+
             .product-hero h1 {
                 font-size: 30px;
             }
-            
+
             .product-intro .intro-text h2 {
                 font-size: 26px;
             }
-            
+
             .contact-cta .cta-text h2 {
                 font-size: 28px;
             }
-            
-            .cta-btns {
-                flex-direction: column;
-            }
-            
-            .cta-btns .btn {
-                width: 100%;
-            }
-            
+
             .modal-content {
                 padding: 20px;
             }
-            
+
             .brochure-viewer {
                 height: 300px;
             }
         }
+
         /* Hide social media buttons on mobile devices */
         @media (max-width: 768px) {
             .fixedsocial-icons {
@@ -1386,7 +1330,6 @@
                 font-size: 1.2rem;
             }
         }
-        
     </style>
 </head>
 <body>
@@ -1397,56 +1340,56 @@
                 <i class="fas fa-phone-alt"></i>
                 <span>Hot Line: +8801713493026</span>
             </div>
-           <div class="social-icons">
-                <a href="https://www.facebook.com/daffodilsoft"title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/daffodilsoft"title="twitter"> <i class="fab fa-twitter"></i></a>
-                <a href="https://bd.linkedin.com/company/daffodilsoft"title="linkedin"> <i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/daffodilsoftwareltd"title="instagram"> <i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UC8T6VFg_Hi4d0vSeQRkZT7Q"title="youtube"> <i class="fab fa-youtube"></i></a>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/daffodilsoft" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/daffodilsoft" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://bd.linkedin.com/company/daffodilsoft" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/daffodilsoftwareltd" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC8T6VFg_Hi4d0vSeQRkZT7Q" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
-    
+
     <!-- Main Navigation -->
-     <nav class="main-nav">
+    <nav class="main-nav">
         <div class="container nav-container">
-            <a class='logo' href='../index.html'>
+            <a class="logo" href="../index.html">
                 <img src="../images/logo.png" alt="DSL Logo" class="logo-img">
-              </a>            <ul class="nav-links">
-                <li><a href='../index.html'>Home</a></li>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
                 <li class="dropdown">
                     <a href="#">Products <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href='smart-edu.html'>Smart Edu</a></li>
-                        <li><a href='smart-hospital.html'>Smart Hospital</a></li>
-                        <li><a href='smart-business.html'>Smart Business 24</a></li>
-                        <li><a href='iums.html'>IUMS</a></li>
-                        <li><a href='1card.html'>1 Card</a></li>
-                        <li><a href='virtual-gate.html'>Virtual Gate</a></li>
+                        <li><a href="smart-edu.html">Smart Edu</a></li>
+                        <li><a href="smart-hospital.html">Smart Hospital</a></li>
+                        <li><a href="smart-business.html">Smart Business 24</a></li>
+                        <li><a href="iums.html">IUMS</a></li>
+                        <li><a href="1card.html">1 Card</a></li>
+                        <li><a href="virtual-gate.html">Virtual Gate</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#">Services <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href='../services/custom-software-development.html'>Custom Software Development</a></li>
-                        <li><a href='../services/odoo-erp-customization.html'>Odoo ERP Customization</a></li>
-                        <li><a href='../services/mobile-apps-development.html'>Mobile Apps Development</a></li>
-                        <li><a href='../services/web-ecommerce-development.html'>Web & E-Commerce Development</a></li>
-                        <li><a href='../services/software-testing-services.html'>Software Testing Services</a></li>
-                        <li><a href='../services/it-cloud-services.html'>IT and Cloud Services</a></li>
+                        <li><a href="../services/custom-software-development.html">Custom Software Development</a></li>
+                        <li><a href="../services/odoo-erp-customization.html">Odoo ERP Customization</a></li>
+                        <li><a href="../services/mobile-apps-development.html">Mobile Apps Development</a></li>
+                        <li><a href="../services/web-ecommerce-development.html">Web & E-Commerce Development</a></li>
+                        <li><a href="../services/software-testing-services.html">Software Testing Services</a></li>
+                        <li><a href="../services/it-cloud-services.html">IT and Cloud Services</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#">About <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href='../about/company-profile.html'>Company Profile</a></li>
-                        <li><a href='../about/message-from-md.html'>Message from MD</a></li>
-                        <li><a href='../about/career.html'>Career</a></li>
-                    </ul>   
+                        <li><a href="../about/company-profile.html">Company Profile</a></li>
+                        <li><a href="../about/message-from-md.html">Message from MD</a></li>
+                        <li><a href="../about/career.html">Career</a></li>
+                    </ul>
                 </li>
-                <li><a href='../portfolio.html'>Portfolio</a></li>
-
-                <li><a href='../contact-us.html'>Contact Us</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../contact-us.html">Contact Us</a></li>
             </ul>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -1458,7 +1401,7 @@
     <section class="product-hero">
         <div class="container">
             <div class="breadcrumb">
-                <a href="index.html">Home</a> / <a href="#">Products</a> / <span>Smart Edu</span>
+                <a href="../index.html">Home</a> / <a href="#">Products</a> / <span>Smart Edu</span>
             </div>
             <div class="hero-content">
                 <div class="hero-text">
@@ -1471,7 +1414,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Smart Edu Dashboard">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Smart Edu Dashboard">
                 </div>
             </div>
         </div>
@@ -1489,255 +1432,187 @@
                 </div>
                 <div class="intro-video">
                     <div class="video-container">
-                        <iframe width="1323" height="744" src="https://www.youtube.com/embed/xUHm8PBHqoc" title="School Management Software" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        <iframe src="https://www.youtube.com/embed/xUHm8PBHqoc" title="School Management Software" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Core Modules Section -->
-  <!-- Core Modules Section -->
-<section class="core-modules">
-    <div class="container">
-        <h2 class="section-title">Core Modules</h2>
-        <p class="section-description">Comprehensive features covering all aspects of educational institution management</p>
-        
-        <div class="modules-grid">
-            <!-- Academic Modules -->
-            <div class="module-card">
-                <div class="module-header">
-                    <h3>Academic Modules</h3>
-                    <i class="fas fa-chevron-down"></i>
+    <section class="core-modules">
+        <div class="container">
+            <h2 class="section-title">Core Modules</h2>
+            <p class="section-description">Comprehensive features covering all aspects of educational institution management</p>
+            <div class="modules-grid">
+                <!-- Academic Modules -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Academic Modules</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Student Information Management</li>
+                            <li>Admission & Enrollment</li>
+                            <li>Curriculum & Course Management</li>
+                            <li>Routine & Classroom</li>
+                            <li>Exams, Results & Grading</li>
+                            <li>LMS Integration</li>
+                            <li>Library & Transport</li>
+                            <li>Portals: Student, Teacher, Parents</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="module-content">
-                    <ul>
-                        <li>Student Information Management</li>
-                        <li>Admission & Enrollment</li>
-                        <li>Curriculum & Course Management</li>
-                        <li>Routine & Classroom</li>
-                        <li>Exams, Results & Grading</li>
-                        <li>LMS Integration</li>
-                        <li>Library & Transport</li>
-                        <li>Portals: Student, Teacher, Parents</li>
-                    </ul>
+                <!-- Administrative Modules -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Administrative Modules</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Central Dashboard</li>
+                            <li>HR & Payroll</li>
+                            <li>Recruitment</li>
+                            <li>Helpdesk</li>
+                            <li>Access Control</li>
+                            <li>Analytics</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Administrative Modules -->
-            <div class="module-card">
-                <div class="module-header">
-                    <h3>Administrative Modules</h3>
-                    <i class="fas fa-chevron-down"></i>
+                <!-- Accounting & Operational Modules -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Accounting & Operational</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Procurement & Inventory</li>
+                            <li>Payment & Billing</li>
+                            <li>Budget & Finance</li>
+                            <li>Asset Management</li>
+                            <li>Approvals</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="module-content">
-                    <ul>
-                        <li>Central Dashboard</li>
-                        <li>HR & Payroll</li>
-                        <li>Recruitment</li>
-                        <li>Helpdesk</li>
-                        <li>Access Control</li>
-                        <li>Analytics</li>
-                    </ul>
-                </div>
-            </div>
-    
-
-
-            <!-- Accounting & Operational Modules -->
-            <div class="module-card">
-                <div class="module-header">
-                    <h3>Accounting & Operational</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="module-content">
-                    <ul>
-                        <li>Procurement & Inventory</li>
-                        <li>Payment & Billing</li>
-                        <li>Budget & Finance</li>
-                        <li>Asset Management</li>
-                        <li>Approvals</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Marketing & Communication Modules -->
-            <div class="module-card">
-                <div class="module-header">
-                    <h3>Marketing & Communication</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="module-content">
-                    <ul>
-                        <li>Student Counseling & CRM</li>
-                        <li>Email & SMS Marketing</li>
-                        <li>Events & Meetings</li>
-                        <li>Website CMS</li>
-                    </ul>
+                <!-- Marketing & Communication Modules -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Marketing & Communication</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Student Counseling & CRM</li>
+                            <li>Email & SMS Marketing</li>
+                            <li>Events & Meetings</li>
+                            <li>Website CMS</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Key Advantages Section -->
- <!-- Key Advantages Section -->
-<section class="key-advantages">
-    <div class="container">
-        <h2 class="section-title">Key Advantages</h2>
-        <p class="section-description">Discover how Smart Edu transforms educational institutions with powerful features</p>
-        
-        <div class="advantages-grid">
-            <!-- Advantage 1 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="50">
-                <div class="advantage-icon">
-                    <i class="fas fa-link"></i>
+    <section class="key-advantages">
+        <div class="container">
+            <h2 class="section-title">Key Advantages</h2>
+            <p class="section-description">Discover how Smart Edu transforms educational institutions with powerful features</p>
+            <div class="advantages-grid">
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="advantage-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Comprehensive Integration</h3>
+                    <p>Seamlessly connects all academic functions for centralized control and data accessibility</p>
                 </div>
-                <h3>Comprehensive Integration</h3>
-                <p>Seamlessly connects all academic functions for centralized control and data accessibility</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 2 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="advantage-icon">
-                    <i class="fas fa-robot"></i>
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="advantage-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Smart Automation</h3>
+                    <p>Automates routine tasks and workflows, reducing manual work and boosting efficiency</p>
                 </div>
-                <h3>Smart Automation</h3>
-                <p>Automates routine tasks and workflows, reducing manual work and boosting efficiency</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 3 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="150">
-                <div class="advantage-icon">
-                    <i class="fas fa-chart-pie"></i>
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="advantage-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Data-Driven Insights</h3>
+                    <p>Provides robust reporting and analytics for informed decision-making</p>
                 </div>
-                <h3>Data-Driven Insights</h3>
-                <p>Provides robust reporting and analytics for informed decision-making</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 4 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="advantage-icon">
-                    <i class="fas fa-eye"></i>
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="advantage-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Real-Time Visibility</h3>
+                    <p>Offers instant access to data and real-time monitoring of academic operations</p>
                 </div>
-                <h3>Real-Time Visibility</h3>
-                <p>Offers instant access to data and real-time monitoring of academic operations</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 5 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="250">
-                <div class="advantage-icon">
-                    <i class="fas fa-leaf"></i>
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="advantage-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Paperless Campus</h3>
+                    <p>Reduces paper usage, contributing to environmental sustainability</p>
                 </div>
-                <h3>Paperless Campus</h3>
-                <p>Reduces paper usage, contributing to environmental sustainability</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 6 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="advantage-icon">
-                    <i class="fas fa-globe"></i>
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="advantage-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Anywhere Access</h3>
+                    <p>Cloud-based platform accessible from anywhere, facilitating remote operations</p>
                 </div>
-                <h3>Anywhere Access</h3>
-                <p>Cloud-based platform accessible from anywhere, facilitating remote operations</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 7 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="350">
-                <div class="advantage-icon">
-                    <i class="fas fa-users"></i>
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="advantage-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Stakeholder Engagement</h3>
+                    <p>Improves interactions between students, teachers, and parents</p>
                 </div>
-                <h3>Stakeholder Engagement</h3>
-                <p>Improves interactions between students, teachers, and parents</p>
-                <div class="advantage-wave"></div>
-            </div>
-            
-            <!-- Advantage 8 -->
-            <div class="advantage-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="advantage-icon">
-                    <i class="fas fa-lock"></i>
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="advantage-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Enterprise Security</h3>
+                    <p>Ensures data security and role-based access control for sensitive information</p>
                 </div>
-                <h3>Enterprise Security</h3>
-                <p>Ensures data security and role-based access control for sensitive information</p>
-                <div class="advantage-wave"></div>
             </div>
         </div>
-        
-       
-    </div>
-</section>
-
+    </section>
 
     <!-- Clients Section -->
     <section class="clients-section">
         <div class="container">
             <h2 class="section-title">Our Esteemed Clients</h2>
             <p class="section-description">Trusted by leading educational institutions across the country</p>
-            
             <div class="client-logos-container">
                 <div class="client-logos-track">
                     <div class="client-logo-item">
                         <img src="https://via.placeholder.com/150x80?text=ABC+School" alt="ABC International School">
-                        <div class="client-tooltip">
-                            <h4>ABC International School</h4>
-                            <p>Improved academic efficiency and paperless operations with Smart Edu</p>
-                        </div>
                     </div>
                     <div class="client-logo-item">
                         <img src="https://via.placeholder.com/150x80?text=XYZ+College" alt="XYZ College">
-                        <div class="client-tooltip">
-                            <h4>XYZ College</h4>
-                            <p>Streamlined administration and better parent engagement</p>
-                        </div>
                     </div>
                     <div class="client-logo-item">
                         <img src="https://via.placeholder.com/150x80?text=Sunshine+Academy" alt="Sunshine Academy">
-                        <div class="client-tooltip">
-                            <h4>Sunshine Academy</h4>
-                            <p>Reduced paperwork by 80% with our digital solution</p>
-                        </div>
                     </div>
                     <div class="client-logo-item">
                         <img src="https://via.placeholder.com/150x80?text=Global+University" alt="Global University">
-                        <div class="client-tooltip">
-                            <h4>Global University</h4>
-                            <p>Integrated university management for 15,000+ students</p>
-                        </div>
                     </div>
                     <div class="client-logo-item">
                         <img src="https://via.placeholder.com/150x80?text=City+Public+School" alt="City Public School">
-                        <div class="client-tooltip">
-                            <h4>City Public School</h4>
-                            <p>Automated attendance and grading system saved 300+ hours monthly</p>
-                        </div>
                     </div>
                     <div class="client-logo-item">
                         <img src="https://via.placeholder.com/150x80?text=Prestige+College" alt="Prestige College">
-                        <div class="client-tooltip">
-                            <h4>Prestige College</h4>
-                            <p>Financial management made simple with our accounting modules</p>
-                        </div>
                     </div>
                     <!-- Duplicate items for infinite loop -->
                     <div class="client-logo-item">
                         <img src="https://via.placeholder.com/150x80?text=ABC+School" alt="ABC International School">
-                        <div class="client-tooltip">
-                            <h4>ABC International School</h4>
-                            <p>Improved academic efficiency and paperless operations with Smart Edu</p>
-                        </div>
                     </div>
                     <div class="client-logo-item">
                         <img src="https://via.placeholder.com/150x80?text=XYZ+College" alt="XYZ College">
-                        <div class="client-tooltip">
-                            <h4>XYZ College</h4>
-                            <p>Streamlined administration and better parent engagement</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1781,20 +1656,18 @@
                         <div class="form-group">
                             <input type="tel" placeholder="Phone Number" required>
                         </div>
-                            <!-- changed -->
                         <div class="form-group">
-                        <label for="product-select">Choose a product:</label>
-                        <select id="product-select" name="product">
-                            <option value="">Select Product</option>
-                            <option value="smart-edu" selected>Smart Edu</option>
-                            <option value="smart-hospital">Smart Hospital</option>
-                            <option value="smart-business">Smart Business 24</option>
-                            <option value="iums">IUMS</option>
-                            <option value="1card">1 Card</option>
-                            <option value="virtual-gate">Virtual Gate</option>
-                        </select>
-                        </div>  
-
+                            <label for="product-select">Choose a product:</label>
+                            <select id="product-select" name="product">
+                                <option value="">Select Product</option>
+                                <option value="smart-edu" selected>Smart Edu</option>
+                                <option value="smart-hospital">Smart Hospital</option>
+                                <option value="smart-business">Smart Business 24</option>
+                                <option value="iums">IUMS</option>
+                                <option value="1card">1 Card</option>
+                                <option value="virtual-gate">Virtual Gate</option>
+                            </select>
+                        </div>
                         <div class="form-group">
                             <textarea placeholder="Additional Notes"></textarea>
                         </div>
@@ -1805,12 +1678,10 @@
         </div>
     </section>
 
-   
-
     <!-- Demo Request Modal -->
     <div class="modal" id="demoModal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal">×</span>
             <h2>Request a Demo</h2>
             <p>Fill out the form below to schedule a personalized demo of Smart Edu</p>
             <form id="demoForm">
@@ -1845,7 +1716,7 @@
     <!-- Brochure Modal -->
     <div class="modal" id="brochureModal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal">×</span>
             <h2>Smart Edu Brochure</h2>
             <div class="brochure-viewer">
                 <iframe src="https://drive.google.com/file/d/1DBgCdcGt-6DRZl37aYMBVEmT5TrKqVzn/preview" frameborder="0"></iframe>
@@ -1864,7 +1735,7 @@
     <!-- Thank You Modal -->
     <div class="modal" id="thankYouModal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal">×</span>
             <div class="thank-you-content">
                 <i class="fas fa-check-circle"></i>
                 <h2>Thank You!</h2>
@@ -1872,7 +1743,7 @@
                 <p>We appreciate your interest in Daffodil Software Ltd. For any assistance, feel free to call <strong>+8801713493026</strong>.</p>
                 <div class="demo-credentials">
                     <h4>Demo Access:</h4>
-                    <p> <strong>Demo Link:</strong>  <a href="https://demo-dipti.daffodilsoft.com/web/login" target="_blank" rel="noopener">https://demo-dipti.daffodilsoft.com/</a></p>
+                    <p><strong>Demo Link:</strong> <a href="https://demo-dipti.daffodilsoft.com/web/login" target="_blank" rel="noopener">https://demo-dipti.daffodilsoft.com/</a></p>
                     <p><strong>Login ID:</strong> demo@gmail.com</p>
                     <p><strong>Password:</strong> 1</p>
                 </div>
@@ -1880,6 +1751,7 @@
             </div>
         </div>
     </div>
+
     <!-- Fixed side bar for Social Media -->
     <div class="fixedsocial-icons">
         <a href="https://www.facebook.com/daffodilsoft" class="social-icon facebook" aria-label="Facebook">
@@ -1895,6 +1767,7 @@
             <i class="fab fa-youtube"></i>
         </a>
     </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1920,7 +1793,6 @@
                         <img src="https://via.placeholder.com/80x80?text=Odoo+Partner" alt="Odoo Partner">
                     </div>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Company</h3>
                     <ul class="footer-links">
@@ -1932,19 +1804,17 @@
                         <li><a href="#">Career</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Products</h3>
                     <ul class="footer-links">
-                         <li><a href='smart-edu.html'>Smart Edu</a></li>
-                        <li><a href='smart-hospital.html'>Smart Hospital</a></li>
-                        <li><a href='smart-business.html'>Smart Business 24</a></li>
-                        <li><a href='iums.html'>IUMS</a></li>
-                        <li><a href='1card.html'>1 Card</a></li>
-                        <li><a href='virtual-gate.html'>Virtual Gate</a></li>
+                        <li><a href="smart-edu.html">Smart Edu</a></li>
+                        <li><a href="smart-hospital.html">Smart Hospital</a></li>
+                        <li><a href="smart-business.html">Smart Rights</a></li>
+                        <li><a href="iums.html">IUMS</a></li>
+                        <li><a href="1card.html">1 Card</a></li>
+                        <li><a href="virtual-gate.html">Virtual Gate</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Insights</h3>
                     <ul class="footer-links">
@@ -1957,13 +1827,11 @@
                         <h4>Subscribe to Newsletter</h4>
                         <form>
                             <input type="email" placeholder="Your Email">
-                            <button type="submit"aria-label="Subscribe to Newsletter"><i class="fas fa-paper-plane"></i></button>
+                            <button type="submit" aria-label="Subscribe to Newsletter"><i class="fas fa-paper-plane"></i></button>
                         </form>
-
                     </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <div class="footer-bottom-left">
                     <p>A proud concern of Daffodil Family</p>
@@ -1972,32 +1840,34 @@
                     <p>© 2025 Daffodil Software Ltd. All Rights Reserved.</p>
                 </div>
                 <div class="footer-bottom-right">
-                    <p>Connect with DSL: 
-                <a href="https://www.facebook.com/daffodilsoft/"title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/daffodilsoft"title="twitter"> <i class="fab fa-twitter"></i></a>
-                <a href="https://bd.linkedin.com/company/daffodilsoft"title="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/daffodilsoftwareltd/"title="instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UC8T6VFg_Hi4d0vSeQRkZT7Q"title="youtube"><i class="fab fa-youtube"></i></a>
+                    <p>Connect with DSL:
+                        <a href="https://www.facebook.com/daffodilsoft/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/daffodilsoft" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://bd.linkedin.com/company/daffodilsoft" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/daffodilsoftwareltd/" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UC8T6VFg_Hi4d0vSeQRkZT7Q" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </p>
                 </div>
             </div>
         </div>
     </footer>
-<!-- Back to Top Button -->
+
+    <!-- Back to Top Button -->
     <div class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
-    
+
     <!-- Custom Mouse Animation -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile Menu Toggle
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const navLinks = document.querySelector('.nav-links');
             const dropdowns = document.querySelectorAll('.dropdown');
-            
+
             mobileMenuBtn.addEventListener('click', function() {
                 navLinks.classList.toggle('active');
                 this.querySelector('i').classList.toggle('fa-times');
@@ -2015,51 +1885,6 @@
                 });
             });
 
-            // Module Cards Accordion with hover effect
-            const moduleCards = document.querySelectorAll('.module-card');
-            
-            moduleCards.forEach(card => {
-                const header = card.querySelector('.module-header');
-                
-                // Click functionality for mobile
-                header.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        // Close all other cards
-                        moduleCards.forEach(otherCard => {
-                            if (otherCard !== card && otherCard.classList.contains('active')) {
-                                otherCard.classList.remove('active');
-                            }
-                        });
-                        
-                        // Toggle current card
-                        card.classList.toggle('active');
-                    }
-                });
-
-                // Hover functionality for desktop
-                if (window.innerWidth > 768) {
-                    card.addEventListener('mouseenter', function() {
-                        // Close all other cards
-                        moduleCards.forEach(otherCard => {
-                            if (otherCard !== card && otherCard.classList.contains('active')) {
-                                otherCard.classList.remove('active');
-                            }
-                        });
-                        
-                        // Open current card
-                        card.classList.add('active');
-                    });
-
-                    // Keep card open when hovering over content
-                    card.addEventListener('mouseleave', function(e) {
-                        // Check if mouse is leaving the card entirely
-                        if (!card.contains(e.relatedTarget)) {
-                            card.classList.remove('active');
-                        }
-                    });
-                }
-            });
-
             // Client Logos Auto-Scrolling
             const clientTrack = document.querySelector('.client-logos-track');
             let clientPosition = 0;
@@ -2068,12 +1893,9 @@
 
             function animateClients() {
                 clientPosition -= clientScrollSpeed;
-                
-                // Reset position when scrolled all items
                 if (clientPosition < -clientTrack.scrollWidth / 2) {
                     clientPosition = 0;
                 }
-                
                 clientTrack.style.transform = `translateX(${clientPosition}px)`;
                 clientAnimationId = requestAnimationFrame(animateClients);
             }
@@ -2147,9 +1969,6 @@
                     e.preventDefault();
                     demoModal.style.display = 'none';
                     thankYouModal.style.display = 'block';
-                    
-                    // Here you would typically send the form data to your server
-                    // For demo purposes, we're just showing the thank you modal
                 });
             }
 
@@ -2157,11 +1976,7 @@
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    
-                    // Show thank you message (could be enhanced with actual form submission)
                     alert('Thank you for reaching out. Our team will contact you shortly. For urgent support, call us at +8801713493026. We appreciate your interest in Smart Edu!');
-                    
-                    // Reset form
                     contactForm.reset();
                 });
             }
@@ -2181,7 +1996,6 @@
                             alert('Sharing failed. Please try again or copy the link manually.');
                         });
                     } else {
-                        // Fallback for browsers that don't support Web Share API
                         alert('Web Share API not supported in your browser. Please copy the link manually.');
                     }
                 });
@@ -2199,98 +2013,45 @@
                 }
             });
 
-            // Update module card behavior on window resize
-            window.addEventListener('resize', function() {
-                moduleCards.forEach(card => {
-                    if (window.innerWidth > 768) {
-                        // Remove click event and add hover for desktop
-                        card.querySelector('.module-header').removeEventListener('click', handleModuleClick);
-                        card.addEventListener('mouseenter', handleModuleHover);
-                        card.addEventListener('mouseleave', handleModuleLeave);
-                    } else {
-                        // Remove hover events and add click for mobile
-                        card.removeEventListener('mouseenter', handleModuleHover);
-                        card.removeEventListener('mouseleave', handleModuleLeave);
-                        card.querySelector('.module-header').addEventListener('click', handleModuleClick);
-                    }
+            // Back to Top Button
+            const backToTop = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+
+            backToTop.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
                 });
             });
 
-            function handleModuleClick() {
-                const card = this.closest('.module-card');
-                // Close all other cards
-                moduleCards.forEach(otherCard => {
-                    if (otherCard !== card && otherCard.classList.contains('active')) {
-                        otherCard.classList.remove('active');
+            // Scroll Animations
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.animate__animated');
+                const windowHeight = window.innerHeight;
+                const triggerPoint = windowHeight / 1.3;
+
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    if (elementPosition < triggerPoint) {
+                        const animation = element.classList.contains('animate__fadeInUp') ? 'fadeInUp' :
+                                         element.classList.contains('animate__fadeInDown') ? 'fadeInDown' :
+                                         element.classList.contains('animate__fadeInLeft') ? 'fadeInLeft' :
+                                         element.classList.contains('animate__fadeInRight') ? 'fadeInRight' : 'fadeIn';
+                        element.classList.add(`animate__${animation}`);
                     }
                 });
-                
-                // Toggle current card
-                card.classList.toggle('active');
-            }
+            };
 
-            function handleModuleHover() {
-                const card = this;
-                // Close all other cards
-                moduleCards.forEach(otherCard => {
-                    if (otherCard !== card && otherCard.classList.contains('active')) {
-                        otherCard.classList.remove('active');
-                    }
-                });
-                
-                // Open current card
-                card.classList.add('active');
-            }
-
-            function handleModuleLeave(e) {
-                const card = this;
-                // Check if mouse is leaving the card entirely
-                if (!card.contains(e.relatedTarget)) {
-                    card.classList.remove('active');
-                }
-            }
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
         });
-
-         // Back to Top Button
-    const backToTop = document.querySelector('.back-to-top');
-  
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTop.classList.add('show');
-      } else {
-        backToTop.classList.remove('show');
-      }
-    });
-  
-    backToTop.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  
-    // Scroll Animations
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.animate__animated');
-      const windowHeight = window.innerHeight;
-      const triggerPoint = windowHeight / 1.3;
-  
-      elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        
-        if (elementPosition < triggerPoint) {
-          const animation = element.classList.contains('animate__fadeInUp') ? 'fadeInUp' :
-                           element.classList.contains('animate__fadeInDown') ? 'fadeInDown' :
-                           element.classList.contains('animate__fadeInLeft') ? 'fadeInLeft' :
-                           element.classList.contains('animate__fadeInRight') ? 'fadeInRight' : 'fadeIn';
-          
-          element.classList.add(`animate__${animation}`);
-        }
-      });
-    };
     </script>
 </body>
-
-<!-- Mirrored from daffodilsoft.netlify.app/products/smart-edu by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jun 2025 20:05:42 GMT -->
 </html>
